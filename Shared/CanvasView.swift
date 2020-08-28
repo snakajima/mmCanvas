@@ -17,7 +17,9 @@ struct CanvasView: View {
                 self.currentStroke.points.append(value.location)
             })
             .onEnded({ (value) in
-                self.canvas.strokes.append(self.currentStroke)
+                if (self.canvas.markerMode) {
+                    self.canvas.strokes.append(self.currentStroke)
+                }
                 self.currentStroke = Stroke()
             })
         ZStack {
@@ -30,10 +32,17 @@ struct CanvasView: View {
             Path { path in
                 self.currentStroke.append(to: &path)
             }
-            .stroke(self.canvas.color, lineWidth: self.canvas.lineWidth)
+            .stroke(self.currentColor, lineWidth: self.currentLineWidth)
         }
         .background(Color(white: 0.95))
         .gesture(drag)
+    }
+    
+    var currentColor:Color {
+        return canvas.markerMode ? canvas.color : Color(.red)
+    }
+    var currentLineWidth:CGFloat {
+        return canvas.markerMode ? canvas.lineWidth : 20.0
     }
 }
 
