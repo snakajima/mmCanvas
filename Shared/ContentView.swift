@@ -13,7 +13,7 @@ struct ContentView: View {
     @State private var lineWidth: CGFloat = 3.0
     var body: some View {
         NavigationView {
-            Canvas(strokes: $strokes,
+            CanvasView(strokes: $strokes,
                        color: $color,
                        lineWidth: $lineWidth)
                 .navigationBarHidden(true)
