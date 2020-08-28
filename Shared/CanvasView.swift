@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct CanvasView: View {
-    @Binding var strokes: [Stroke]
-    @Binding var color: Color
-    @Binding var lineWidth: CGFloat
+    @Binding var canvas: Canvas
     @State var currentStroke = Stroke()
 
     var body: some View {
@@ -19,20 +17,20 @@ struct CanvasView: View {
                 self.currentStroke.points.append(value.location)
             })
             .onEnded({ (value) in
-                self.strokes.append(self.currentStroke)
+                self.canvas.strokes.append(self.currentStroke)
                 self.currentStroke = Stroke()
             })
         ZStack {
             Path { path in
-                for stroke in self.strokes {
+                for stroke in self.canvas.strokes {
                     stroke.append(to: &path)
                 }
             }
-            .stroke(self.color, lineWidth: self.lineWidth)
+            .stroke(self.canvas.color, lineWidth: self.canvas.lineWidth)
             Path { path in
                 self.currentStroke.append(to: &path)
             }
-            .stroke(self.color, lineWidth: self.lineWidth)
+            .stroke(self.canvas.color, lineWidth: self.canvas.lineWidth)
         }
         .background(Color(white: 0.95))
         .gesture(drag)
@@ -47,15 +45,11 @@ struct Canvas_Previews: PreviewProvider {
 }
 
 struct Canvas_Instance: View {
-    @State private var strokes: [Stroke] = [Stroke]()
-    @State private var color: Color = Color.blue
-    @State private var lineWidth: CGFloat = 3.0
+    @State private var canvas = Canvas()
     
     var body: some View {
         VStack(alignment: .center) {
-            CanvasView(strokes: $strokes,
-                       color: $color,
-                       lineWidth: $lineWidth)
+            CanvasView(canvas:$canvas)
                 .edgesIgnoringSafeArea(.all)
         }
     }

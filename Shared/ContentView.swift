@@ -8,28 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var strokes: [Stroke] = [Stroke]()
-    @State private var color: Color = Color.black
-    @State private var lineWidth: CGFloat = 3.0
+    @State private var canvas = Canvas()
     var body: some View {
         NavigationView {
-            CanvasView(strokes: $strokes,
-                       color: $color,
-                       lineWidth: $lineWidth)
+            CanvasView(canvas: $canvas)
                 .navigationBarHidden(true)
                 .edgesIgnoringSafeArea(.all)
                 .toolbar {
                     ToolbarItem(placement: .bottomBar) {
-                        Button(action: { self.strokes.removeLast() }, label: {
+                        Button(action: { self.canvas.strokes.removeLast() }, label: {
                             Text("Undo")
                         })
-                        .disabled(self.strokes.count==0)
+                        .disabled(self.canvas.strokes.count==0)
                     }
                     ToolbarItem(placement: .bottomBar) {
-                        Button(action: { self.strokes.removeAll() }, label: {
+                        Button(action: { self.canvas.strokes.removeAll() }, label: {
                             Image(systemName: "trash")
                         })
-                        .disabled(self.strokes.count==0)
+                        .disabled(self.canvas.strokes.count==0)
                     }
                 }
         }
