@@ -22,13 +22,13 @@ struct Canvas: View {
                     }
                 }
                 .stroke(self.color, lineWidth: self.lineWidth)
-                .background(Color(white: 0.95))
                 Path { path in
                     self.currentStroke.append(to: &path)
                 }
                 .stroke(self.color, lineWidth: self.lineWidth)
 
             }
+            .background(Color(white: 0.95))
             .gesture(
                 DragGesture(minimumDistance: 0.1)
                     .onChanged({ (value) in
@@ -65,6 +65,7 @@ struct Canvas_Instance: View {
             Canvas(strokes: $strokes,
                        color: $color,
                        lineWidth: $lineWidth)
+                .edgesIgnoringSafeArea(.all)
         }
     }
 }
