@@ -12,12 +12,19 @@ struct ContentView: View {
     @State private var color: Color = Color.black
     @State private var lineWidth: CGFloat = 3.0
     var body: some View {
-        VStack {
-            Text("Hello, world!")
-                .padding()
+        NavigationView {
             Canvas(strokes: $strokes,
                        color: $color,
                        lineWidth: $lineWidth)
+                .navigationBarHidden(true)
+                .edgesIgnoringSafeArea(.all)
+                .toolbar {
+                            ToolbarItem(placement: .bottomBar) {
+                                Button("Press Me") {
+                                    print("Pressed")
+                                }
+                            }
+                        }
         }
     }
 }
