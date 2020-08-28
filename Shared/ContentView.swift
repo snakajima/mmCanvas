@@ -20,9 +20,10 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
                 .toolbar {
                             ToolbarItem(placement: .bottomBar) {
-                                Button("Press Me") {
-                                    print("Pressed")
+                                Button("Undo") {
+                                    self.strokes.removeLast()
                                 }
+                                .disabled(self.strokes.count==0)
                             }
                         }
         }
@@ -35,18 +36,7 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct Stroke {
-    var points = [CGPoint]()
-    func append(to path:inout Path) {
-        if self.points.count == 0 {
-            return
-        }
-        path.move(to: self.points[0])
-        for point in self.points {
-            path.addLine(to: point)
-        }
-    }
-}
+
 
 struct Canvas2: View {
     @State private var strokes = [Stroke]()
