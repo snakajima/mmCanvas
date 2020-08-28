@@ -19,13 +19,19 @@ struct ContentView: View {
                 .navigationBarHidden(true)
                 .edgesIgnoringSafeArea(.all)
                 .toolbar {
-                            ToolbarItem(placement: .bottomBar) {
-                                Button("Undo") {
-                                    self.strokes.removeLast()
-                                }
-                                .disabled(self.strokes.count==0)
-                            }
+                    ToolbarItem(placement: .bottomBar) {
+                        Button("Undo") {
+                            self.strokes.removeLast()
                         }
+                        .disabled(self.strokes.count==0)
+                    }
+                    ToolbarItem(placement: .bottomBar) {
+                        Button("Clear") {
+                            self.strokes.removeAll()
+                        }
+                        .disabled(self.strokes.count==0)
+                    }
+                }
         }
     }
 }
