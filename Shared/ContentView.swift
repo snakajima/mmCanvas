@@ -27,6 +27,13 @@ struct ContentView: View {
                         })
                         .disabled(self.canvas.strokes.count==0)
                     }
+                    ToolbarItem(placement: .bottomBar) {
+                        Button(action: {
+                            self.canvas.markerMode.toggle()
+                        }, label: {
+                            Image(systemName: self.canvas.markerMode ? "pencil.tip": "message")
+                        })
+                    }
                 }
         }
     }
