@@ -42,3 +42,23 @@ struct Canvas: View {
     }
 }
 
+
+struct Canvas_Previews: PreviewProvider {
+    static var previews: some View {
+        Canvas_Instance()
+    }
+}
+
+struct Canvas_Instance: View {
+    @State private var strokes: [Stroke] = [Stroke]()
+    @State private var color: Color = Color.blue
+    @State private var lineWidth: CGFloat = 3.0
+    
+    var body: some View {
+        VStack(alignment: .center) {
+            Canvas(strokes: $strokes,
+                       color: $color,
+                       lineWidth: $lineWidth)
+        }
+    }
+}
