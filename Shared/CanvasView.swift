@@ -35,16 +35,21 @@ struct CanvasView: View {
             Path { path in
                 self.currentStroke.append(to: &path)
             }
-            .stroke(self.currentColor, lineWidth: self.currentLineWidth)
+            .stroke(lineWidth: self.currentLineWidth)
+            .fill(self.currentColor)
             Path { path in
                 self.hilite.append(to: &path)
             }
-            .stroke(Color(.green), lineWidth: 20.0)
+            .stroke(style:self.hiliteStyle)
+            .fill(Color(.green))
         }
         .background(Color(white: 0.95))
         .gesture(drag)
     }
     
+    var hiliteStyle:StrokeStyle {
+        return StrokeStyle(lineWidth: 20.0, lineCap: CGLineCap.round, lineJoin: CGLineJoin.round, miterLimit: 0.1, dash: [], dashPhase: 0)
+    }
     var currentColor:Color {
         return canvas.markerMode ? canvas.color : Color(.red)
     }
@@ -61,7 +66,7 @@ struct Canvas_Previews: PreviewProvider {
 }
 
 struct Canvas_Instance: View {
-    @State private var canvas = Canvas()
+    @State private var canvas = Canvas(markerMode:false)
     
     var body: some View {
         VStack(alignment: .center) {
