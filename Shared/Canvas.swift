@@ -32,11 +32,7 @@ struct Canvas: View {
             .gesture(
                 DragGesture(minimumDistance: 0.1)
                     .onChanged({ (value) in
-                        let currentPoint = value.location
-                        if currentPoint.y >= 0
-                            && currentPoint.y < geometry.size.height {
-                            self.currentStroke.points.append(currentPoint)
-                        }
+                        self.currentStroke.points.append(value.location)
                     })
                     .onEnded({ (value) in
                         self.strokes.append(self.currentStroke)
