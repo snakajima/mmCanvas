@@ -20,15 +20,15 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
                 .toolbar {
                     ToolbarItem(placement: .bottomBar) {
-                        Button("Undo") {
-                            self.strokes.removeLast()
-                        }
+                        Button(action: { self.strokes.removeLast() }, label: {
+                            Text("Undo")
+                        })
                         .disabled(self.strokes.count==0)
                     }
                     ToolbarItem(placement: .bottomBar) {
-                        Button("Clear") {
-                            self.strokes.removeAll()
-                        }
+                        Button(action: { self.strokes.removeAll() }, label: {
+                            Image(systemName: "trash")
+                        })
                         .disabled(self.strokes.count==0)
                     }
                 }
