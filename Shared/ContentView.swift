@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var strokes: [Stroke] = [Stroke]()
+    @State private var color: Color = Color.black
+    @State private var lineWidth: CGFloat = 3.0
     var body: some View {
         VStack {
             Text("Hello, world!")
                 .padding()
-            Canvas()
+            Canvas(strokes: $strokes,
+                       color: $color,
+                       lineWidth: $lineWidth)
         }
     }
 }
@@ -36,7 +41,7 @@ struct Stroke {
     }
 }
 
-struct Canvas: View {
+struct Canvas2: View {
     @State private var strokes = [Stroke]()
     @State private var currentStroke = Stroke()
     var body: some View {
@@ -51,15 +56,15 @@ struct Canvas: View {
         return GeometryReader { geometry in
             Path { path in
                 path.move(to: .init(x: 0, y: 0))
-                path.addLine(to: .init(x: 200, y: 200))
+                path.addLine(to: .init(x: 200, y: 10))
                 for stroke in self.strokes {
                     stroke.append(to: &path)
                 }
                 self.currentStroke.append(to: &path)
             }
             .stroke()
+            .gesture(drag)
         }
         .frame(maxHeight: .infinity)
-        .gesture(drag)
     }
 }

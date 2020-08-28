@@ -13,6 +13,8 @@
 		7433B57324F8AE6300041FA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433B55E24F8AE6100041FA5 /* ContentView.swift */; };
 		7433B57424F8AE6300041FA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7433B55F24F8AE6200041FA5 /* Assets.xcassets */; };
 		7433B57524F8AE6300041FA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7433B55F24F8AE6200041FA5 /* Assets.xcassets */; };
+		7433B57F24F92A4300041FA5 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433B57E24F92A4300041FA5 /* Canvas.swift */; };
+		7433B58024F92A4300041FA5 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433B57E24F92A4300041FA5 /* Canvas.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		7433B56C24F8AE6300041FA5 /* mmCanvas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mmCanvas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7433B56E24F8AE6300041FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7433B56F24F8AE6300041FA5 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		7433B57E24F92A4300041FA5 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,7 @@
 			children = (
 				7433B55D24F8AE6100041FA5 /* mmCanvasApp.swift */,
 				7433B55E24F8AE6100041FA5 /* ContentView.swift */,
+				7433B57E24F92A4300041FA5 /* Canvas.swift */,
 				7433B55F24F8AE6200041FA5 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -189,6 +193,7 @@
 			files = (
 				7433B57224F8AE6300041FA5 /* ContentView.swift in Sources */,
 				7433B57024F8AE6300041FA5 /* mmCanvasApp.swift in Sources */,
+				7433B57F24F92A4300041FA5 /* Canvas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +203,7 @@
 			files = (
 				7433B57324F8AE6300041FA5 /* ContentView.swift in Sources */,
 				7433B57124F8AE6300041FA5 /* mmCanvasApp.swift in Sources */,
+				7433B58024F92A4300041FA5 /* Canvas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
