@@ -10,6 +10,7 @@ import SwiftUI
 struct CanvasView: View {
     @Binding var canvas: Canvas
     @State var currentStroke = Stroke()
+    @State var hilite = Stroke()
 
     var body: some View {
         let drag = DragGesture(minimumDistance: 0.1)
@@ -19,6 +20,8 @@ struct CanvasView: View {
             .onEnded({ (value) in
                 if (self.canvas.markerMode) {
                     self.canvas.strokes.append(self.currentStroke)
+                } else {
+                    self.hilite = self.currentStroke
                 }
                 self.currentStroke = Stroke()
             })
@@ -33,6 +36,10 @@ struct CanvasView: View {
                 self.currentStroke.append(to: &path)
             }
             .stroke(self.currentColor, lineWidth: self.currentLineWidth)
+            Path { path in
+                self.hilite.append(to: &path)
+            }
+            .stroke(Color(.green), lineWidth: 20.0)
         }
         .background(Color(white: 0.95))
         .gesture(drag)
