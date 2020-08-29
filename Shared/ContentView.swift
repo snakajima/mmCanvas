@@ -34,7 +34,7 @@ struct ContentView: View {
                         Button(action: {
                             self.canvas.markerMode.toggle()
                         }, label: {
-                            Image(systemName: self.canvas.markerMode ? "pencil.tip": "message")
+                            Image(systemName: self.canvas.markerMode ? "pencil": "pencil.and.outline")
                         })
                     }
                 }
