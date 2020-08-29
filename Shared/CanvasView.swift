@@ -11,6 +11,7 @@ struct CanvasView: View {
     @Binding var canvas: Canvas
     @State var currentStroke = Stroke()
     @State var hilite = Stroke()
+    @State var opacity = 0.0
 
     var body: some View {
         let drag = DragGesture(minimumDistance: 0.1)
@@ -23,6 +24,10 @@ struct CanvasView: View {
                     self.canvas.strokes.append(self.currentStroke)
                 } else {
                     self.hilite = self.currentStroke
+                    self.opacity = 1.0
+                    withAnimation {
+                        self.opacity = 0.0
+                    }
                 }
                 self.currentStroke = Stroke()
             })
@@ -48,7 +53,7 @@ struct CanvasView: View {
                 }
                     .stroke(style:self.hiliteStyle)
                     .fill(self.hiliteColor)
-                    .blur(radius:3)
+                    .blur(radius:2)
             }
             if !hilite.isEmpty {
                 Path {
@@ -56,9 +61,9 @@ struct CanvasView: View {
                 }
                     .stroke(style:self.hiliteStyle)
                     .fill(self.hiliteColor)
-                    .blur(radius:3)
-                    //.rotationEffect(.degrees(90))
-                    //.animation(.easeOut)
+                    .blur(radius:2)
+                .opacity(self.opacity)
+                    .animation(.easeOut)
             }
         }
         .background(Color(white: 0.95))
@@ -68,7 +73,7 @@ struct CanvasView: View {
     let markerStyle = StrokeStyle(lineWidth: 3.0, lineCap: CGLineCap.round, lineJoin: CGLineJoin.round, miterLimit: 0.1, dash: [], dashPhase: 0)
     let hiliteStyle = StrokeStyle(lineWidth: 30.0, lineCap: CGLineCap.round, lineJoin: CGLineJoin.round, miterLimit: 0.1, dash: [], dashPhase: 0)
     let markerColor = Color(.blue)
-    let hiliteColor = Color(Color.RGBColorSpace.sRGB, red: 1.0, green: 0, blue: 0, opacity: 0.3)
+    let hiliteColor = Color(Color.RGBColorSpace.sRGB, red: 1.0, green: 0, blue: 0, opacity: 0.2)
 }
 
 
