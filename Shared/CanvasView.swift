@@ -14,11 +14,11 @@ struct CanvasView: View {
 
     var body: some View {
         let drag = DragGesture(minimumDistance: 0.1)
-            .onChanged({ (value) in
+            .onChanged({ value in
                 self.hilite.clear()
                 self.currentStroke.points.append(value.location)
             })
-            .onEnded({ (value) in
+            .onEnded({ value in
                 if (self.canvas.markerMode) {
                     self.canvas.strokes.append(self.currentStroke)
                 } else {
@@ -27,36 +27,36 @@ struct CanvasView: View {
                 self.currentStroke = Stroke()
             })
         ZStack {
-            Path { path in
+            Path {
                 for stroke in self.canvas.strokes {
-                    stroke.append(to: &path)
+                    stroke.append(to: &$0)
                 }
             }
                 .stroke(style:self.markerStyle)
                 .fill(self.markerColor)
+
             if (self.canvas.markerMode) {
-                Path { path in
-                    self.currentStroke.append(to: &path)
+                Path {
+                    self.currentStroke.append(to: &$0)
                 }
-                .stroke(style:self.markerStyle)
-                .fill(self.markerColor)
+                    .stroke(style:self.markerStyle)
+                    .fill(self.markerColor)
 
             } else {
-                Path { path in
-                    self.currentStroke.append(to: &path)
-                }
-                .stroke(style:self.hiliteStyle)
-                .fill(self.hiliteColor)
-                .blur(radius:3)
-
-            }
-            if !hilite.isEmpty {
-                Path { path in
-                    self.hilite.append(to: &path)
+                Path {
+                    self.currentStroke.append(to: &$0)
                 }
                     .stroke(style:self.hiliteStyle)
                     .fill(self.hiliteColor)
-                .blur(radius:3)
+                    .blur(radius:3)
+            }
+            if !hilite.isEmpty {
+                Path {
+                    self.hilite.append(to: &$0)
+                }
+                    .stroke(style:self.hiliteStyle)
+                    .fill(self.hiliteColor)
+                    .blur(radius:3)
                     //.rotationEffect(.degrees(90))
                     //.animation(.easeOut)
             }
