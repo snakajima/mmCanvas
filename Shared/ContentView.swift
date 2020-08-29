@@ -16,15 +16,15 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
                 .toolbar {
                     ToolbarItem(placement: .bottomBar) {
-                        Button(action: { self.canvas.strokes.removeLast() }, label: {
+                        Button(action: { self.canvas.strokes.removeLast() }) {
                             Text("Undo")
-                        })
+                        }
                         .disabled(self.canvas.strokes.count==0)
                     }
                     ToolbarItem(placement: .bottomBar) {
-                        Button(action: { self.canvas.strokes.removeAll() }, label: {
+                        Button(action: { self.canvas.strokes.removeAll() }) {
                             Image(systemName: "trash")
-                        })
+                        }
                         .disabled(self.canvas.strokes.count==0)
                     }
                     ToolbarItem(placement: .bottomBar) {
@@ -33,9 +33,9 @@ struct ContentView: View {
                     ToolbarItem(placement: .bottomBar) {
                         Button(action: {
                             self.canvas.markerMode.toggle()
-                        }, label: {
+                        }) {
                             Image(systemName: self.canvas.markerMode ? "pencil": "pencil.and.outline")
-                        })
+                        }
                     }
                 }
         }
