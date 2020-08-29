@@ -34,19 +34,31 @@ struct CanvasView: View {
             }
                 .stroke(style:self.markerStyle)
                 .fill(self.markerColor)
-            Path { path in
-                self.currentStroke.append(to: &path)
+            if (self.canvas.markerMode) {
+                Path { path in
+                    self.currentStroke.append(to: &path)
+                }
+                .stroke(style:self.markerStyle)
+                .fill(self.markerColor)
+
+            } else {
+                Path { path in
+                    self.currentStroke.append(to: &path)
+                }
+                .stroke(style:self.hiliteStyle)
+                .fill(self.hiliteColor)
+                .blur(radius:3)
+
             }
-                .stroke(style:self.currentStyle)
-                .fill(self.currentColor)
             if !hilite.isEmpty {
                 Path { path in
                     self.hilite.append(to: &path)
                 }
                     .stroke(style:self.hiliteStyle)
                     .fill(self.hiliteColor)
-                    .rotationEffect(.degrees(90))
-                    .animation(.easeOut)
+                .blur(radius:3)
+                    //.rotationEffect(.degrees(90))
+                    //.animation(.easeOut)
             }
         }
         .background(Color(white: 0.95))
@@ -54,17 +66,11 @@ struct CanvasView: View {
     }
     
     let markerStyle = StrokeStyle(lineWidth: 3.0, lineCap: CGLineCap.round, lineJoin: CGLineJoin.round, miterLimit: 0.1, dash: [], dashPhase: 0)
-    let hiliteStyle = StrokeStyle(lineWidth: 20.0, lineCap: CGLineCap.round, lineJoin: CGLineJoin.round, miterLimit: 0.1, dash: [], dashPhase: 0)
+    let hiliteStyle = StrokeStyle(lineWidth: 30.0, lineCap: CGLineCap.round, lineJoin: CGLineJoin.round, miterLimit: 0.1, dash: [], dashPhase: 0)
     let markerColor = Color(.blue)
-    let hiliteColor = Color(Color.RGBColorSpace.sRGB, red: 1.0, green: 0, blue: 0, opacity: 0.5)
-        
-    var currentColor:Color {
-        return canvas.markerMode ? markerColor : hiliteColor
-    }
-    var currentStyle:StrokeStyle {
-        return canvas.markerMode ? markerStyle : hiliteStyle
-    }
+    let hiliteColor = Color(Color.RGBColorSpace.sRGB, red: 1.0, green: 0, blue: 0, opacity: 0.3)
 }
+
 
 
 struct Canvas_Previews: PreviewProvider {
