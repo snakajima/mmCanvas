@@ -16,7 +16,6 @@ struct CanvasView: View {
     var body: some View {
         let drag = DragGesture(minimumDistance: 0.1)
             .onChanged({ value in
-                self.hilite.clear()
                 self.currentStroke.points.append(value.location)
             })
             .onEnded({ value in
@@ -55,16 +54,14 @@ struct CanvasView: View {
                     .fill(self.hiliteColor)
                     .blur(radius:2)
             }
-            if !hilite.isEmpty {
-                Path {
-                    self.hilite.append(to: &$0)
-                }
-                    .stroke(style:self.hiliteStyle)
-                    .fill(self.hiliteColor)
-                    .blur(radius:2)
-                .opacity(self.opacity)
-                    .animation(.easeOut)
+            Path {
+                self.hilite.append(to: &$0)
             }
+                .stroke(style:self.hiliteStyle)
+                .fill(self.hiliteColor)
+                .blur(radius:2)
+            .opacity(self.opacity)
+                .animation(.easeOut)
         }
         .background(Color(white: 0.95))
         .gesture(drag)

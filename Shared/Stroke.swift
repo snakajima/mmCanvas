@@ -9,12 +9,6 @@ import SwiftUI
 
 struct Stroke {
     var points = [CGPoint]()
-    mutating func clear() {
-        points.removeAll()
-    }
-    var isEmpty:Bool {
-        return points.count == 0
-    }
     func append(to path:inout Path) {
         if self.points.count == 0 {
             return

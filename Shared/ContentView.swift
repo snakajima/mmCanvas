@@ -28,6 +28,9 @@ struct ContentView: View {
                         .disabled(self.canvas.strokes.count==0)
                     }
                     ToolbarItem(placement: .bottomBar) {
+                        Spacer()
+                    }
+                    ToolbarItem(placement: .bottomBar) {
                         Button(action: {
                             self.canvas.markerMode.toggle()
                         }, label: {
