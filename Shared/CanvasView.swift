@@ -31,30 +31,33 @@ struct CanvasView: View {
                     stroke.append(to: &path)
                 }
             }
-            .stroke(self.canvas.color, lineWidth: self.canvas.lineWidth)
+                .stroke(style:self.markerStyle)
+                .fill(self.markerColor)
             Path { path in
                 self.currentStroke.append(to: &path)
             }
-            .stroke(lineWidth: self.currentLineWidth)
-            .fill(self.currentColor)
+                .stroke(style:self.currentStyle)
+                .fill(self.currentColor)
             Path { path in
                 self.hilite.append(to: &path)
             }
-            .stroke(style:self.hiliteStyle)
-            .fill(Color(.green))
+                .stroke(style:self.hiliteStyle)
+                .fill(self.hiliteColor)
         }
         .background(Color(white: 0.95))
         .gesture(drag)
     }
     
-    var hiliteStyle:StrokeStyle {
-        return StrokeStyle(lineWidth: 20.0, lineCap: CGLineCap.round, lineJoin: CGLineJoin.round, miterLimit: 0.1, dash: [], dashPhase: 0)
-    }
+    let markerStyle = StrokeStyle(lineWidth: 3.0, lineCap: CGLineCap.round, lineJoin: CGLineJoin.round, miterLimit: 0.1, dash: [], dashPhase: 0)
+    let hiliteStyle = StrokeStyle(lineWidth: 20.0, lineCap: CGLineCap.round, lineJoin: CGLineJoin.round, miterLimit: 0.1, dash: [], dashPhase: 0)
+    let markerColor = Color(.blue)
+    let hiliteColor = Color(Color.RGBColorSpace.sRGB, red: 1.0, green: 0, blue: 0, opacity: 0.5)
+        
     var currentColor:Color {
-        return canvas.markerMode ? canvas.color : Color(.red)
+        return canvas.markerMode ? markerColor : hiliteColor
     }
-    var currentLineWidth:CGFloat {
-        return canvas.markerMode ? canvas.lineWidth : 20.0
+    var currentStyle:StrokeStyle {
+        return canvas.markerMode ? markerStyle : hiliteStyle
     }
 }
 
