@@ -39,11 +39,15 @@ struct CanvasView: View {
             }
                 .stroke(style:self.currentStyle)
                 .fill(self.currentColor)
-            Path { path in
-                self.hilite.append(to: &path)
+            if !hilite.isEmpty {
+                Path { path in
+                    self.hilite.append(to: &path)
+                }
+                    .stroke(style:self.hiliteStyle)
+                    .fill(self.hiliteColor)
+                    .rotationEffect(.degrees(90))
+                    .animation(.easeOut)
             }
-                .stroke(style:self.hiliteStyle)
-                .fill(self.hiliteColor)
         }
         .background(Color(white: 0.95))
         .gesture(drag)
