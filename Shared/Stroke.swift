@@ -18,13 +18,16 @@ struct Stroke {
             path.addLine(to: self.points.last!)
             return
         }
-        for i in 1...points.count-2 {
+        for i in 1..<points.count-1 {
             let point = points[i]
             let next = points[i+1]
-            let mid = CGPoint(x: (point.x + next.x)/2, y: (point.y+next.y)/2)
-            path.addQuadCurve(to: mid, control: point)
+            if (i < points.count-2) {
+                let mid = CGPoint(x: (point.x + next.x)/2, y: (point.y+next.y)/2)
+                path.addQuadCurve(to: mid, control: point)
+            } else {
+                path.addQuadCurve(to: next, control: point)
+            }
         }
-        path.addLine(to: self.points.last!)
     }
 }
 
