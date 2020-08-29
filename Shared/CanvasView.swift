@@ -15,6 +15,7 @@ struct CanvasView: View {
     var body: some View {
         let drag = DragGesture(minimumDistance: 0.1)
             .onChanged({ (value) in
+                self.hilite.clear()
                 self.currentStroke.points.append(value.location)
             })
             .onEnded({ (value) in
