@@ -10,23 +10,20 @@ import SwiftUI
 struct Stroke {
     var points = [CGPoint]()
     func append(to path:inout Path) {
-        if self.points.count == 0 {
+        guard self.points.count > 0 else {
             return
         }
         path.move(to: self.points.first!)
-        if (self.points.count <= 2) {
+        if (self.points.count < 3) {
             path.addLine(to: self.points.last!)
             return
         }
         for i in 1..<points.count-1 {
             let point = points[i]
             let next = points[i+1]
-            if (i < points.count-2) {
-                let mid = CGPoint(x: (point.x + next.x)/2, y: (point.y+next.y)/2)
-                path.addQuadCurve(to: mid, control: point)
-            } else {
-                path.addQuadCurve(to: next, control: point)
-            }
+            let target = (i < points.count-2) ?
+                CGPoint(x: (point.x + next.x)/2, y: (point.y+next.y)/2) : next
+            path.addQuadCurve(to: target, control: point)
         }
     }
 }
