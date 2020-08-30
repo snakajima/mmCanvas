@@ -7,7 +7,13 @@
 
 import SwiftUI
 
+enum DrawMode :Int {
+    case marker = 0
+    case hiliter = 1
+}
+
 struct Canvas {
-    var strokes: [Stroke] = [Stroke]()
-    var markerMode: Bool = true
+    var strokes = [Stroke]()
+    var markerMode = true
+    var drawmode = DrawMode.marker
 }
