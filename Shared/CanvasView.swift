@@ -21,7 +21,7 @@ struct CanvasView: View {
             .onEnded({ value in
                 if (self.canvas.drawMode == .marker) {
                     self.canvas.strokes.append(self.currentStroke)
-                } else {
+                } else if  (self.canvas.drawMode == .hiliter) {
                     self.hilite = self.currentStroke
                     self.opacity = 1.0
                     withAnimation {
@@ -46,7 +46,7 @@ struct CanvasView: View {
                     .stroke(style:self.markerStyle)
                     .fill(self.markerColor)
 
-            } else {
+            } else if (self.canvas.drawMode == .hiliter) {
                 Path {
                     self.currentStroke.append(to: &$0)
                 }

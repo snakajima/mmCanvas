@@ -10,6 +10,7 @@ import SwiftUI
 enum DrawMode :Int {
     case marker = 0
     case hiliter = 1
+    case emitter = 2
 }
 
 struct Canvas {
