@@ -19,7 +19,7 @@ struct CanvasView: View {
                 self.currentStroke.points.append(value.location)
             })
             .onEnded({ value in
-                if (self.canvas.markerMode) {
+                if (self.canvas.drawMode == .marker) {
                     self.canvas.strokes.append(self.currentStroke)
                 } else {
                     self.hilite = self.currentStroke
@@ -39,7 +39,7 @@ struct CanvasView: View {
                 .stroke(style:self.markerStyle)
                 .fill(self.markerColor)
 
-            if (self.canvas.markerMode) {
+            if (self.canvas.drawMode == .marker) {
                 Path {
                     self.currentStroke.append(to: &$0)
                 }
@@ -82,7 +82,7 @@ struct Canvas_Previews: PreviewProvider {
 }
 
 struct Canvas_Instance: View {
-    @State private var canvas = Canvas(markerMode:false)
+    @State private var canvas = Canvas(drawMode:DrawMode.hiliter)
     
     var body: some View {
         VStack(alignment: .center) {
