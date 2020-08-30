@@ -31,6 +31,7 @@ struct CanvasView: View {
                 self.currentStroke = Stroke()
             })
         ZStack {
+            ParticleEmitter()
             Path {
                 for stroke in self.canvas.strokes {
                     stroke.append(to: &$0)

@@ -19,6 +19,8 @@
 		7433B58324F92E2900041FA5 /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433B58124F92E2900041FA5 /* Stroke.swift */; };
 		7433B58524F94AA100041FA5 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433B58424F94AA000041FA5 /* Canvas.swift */; };
 		7433B58624F94AA100041FA5 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433B58424F94AA000041FA5 /* Canvas.swift */; };
+		747F501524FBD29A0054FC83 /* ParticleEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F501424FBD29A0054FC83 /* ParticleEmitter.swift */; };
+		747F501624FBD29A0054FC83 /* ParticleEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F501424FBD29A0054FC83 /* ParticleEmitter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,7 @@
 		7433B57E24F92A4300041FA5 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		7433B58124F92E2900041FA5 /* Stroke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stroke.swift; sourceTree = "<group>"; };
 		7433B58424F94AA000041FA5 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		747F501424FBD29A0054FC83 /* ParticleEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleEmitter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,7 @@
 			children = (
 				7433B55D24F8AE6100041FA5 /* mmCanvasApp.swift */,
 				7433B55E24F8AE6100041FA5 /* ContentView.swift */,
+				747F501424FBD29A0054FC83 /* ParticleEmitter.swift */,
 				7433B58424F94AA000041FA5 /* Canvas.swift */,
 				7433B58124F92E2900041FA5 /* Stroke.swift */,
 				7433B57E24F92A4300041FA5 /* CanvasView.swift */,
@@ -201,6 +205,7 @@
 			files = (
 				7433B57224F8AE6300041FA5 /* ContentView.swift in Sources */,
 				7433B57024F8AE6300041FA5 /* mmCanvasApp.swift in Sources */,
+				747F501524FBD29A0054FC83 /* ParticleEmitter.swift in Sources */,
 				7433B57F24F92A4300041FA5 /* CanvasView.swift in Sources */,
 				7433B58524F94AA100041FA5 /* Canvas.swift in Sources */,
 				7433B58224F92E2900041FA5 /* Stroke.swift in Sources */,
@@ -213,6 +218,7 @@
 			files = (
 				7433B57324F8AE6300041FA5 /* ContentView.swift in Sources */,
 				7433B57124F8AE6300041FA5 /* mmCanvasApp.swift in Sources */,
+				747F501624FBD29A0054FC83 /* ParticleEmitter.swift in Sources */,
 				7433B58024F92A4300041FA5 /* CanvasView.swift in Sources */,
 				7433B58624F94AA100041FA5 /* Canvas.swift in Sources */,
 				7433B58324F92E2900041FA5 /* Stroke.swift in Sources */,
