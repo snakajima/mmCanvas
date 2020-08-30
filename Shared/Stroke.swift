@@ -14,7 +14,7 @@ struct Stroke {
             return
         }
         path.move(to: self.points.first!)
-        if (self.points.count < 3) {
+        guard (self.points.count >= 3) else {
             path.addLine(to: self.points.last!)
             return
         }
@@ -30,30 +30,24 @@ struct Stroke {
 
 struct Stroke_Previews: PreviewProvider {
     static let points = [
-        CGPoint(x: 0, y: 0),
-        CGPoint(x: 100, y: 0),
-        CGPoint(x: 0, y: 100),
-        CGPoint(x: 100, y: 100),
-        CGPoint(x: 100, y: 0),
+        CGPoint(x: 0, y: 0), CGPoint(x: 100, y: 0), CGPoint(x: 0, y: 100),
+        CGPoint(x: 100, y: 100), CGPoint(x: 100, y: 0),
     ]
     static var previews: some View {
         VStack {
             Path {
                 Stroke(points: Array(points[0..<2])).append(to:&$0)
-            }
-            .stroke()
+            } .stroke()
             Path {
                 Stroke(points: Array(points[0..<3])).append(to:&$0)
-            }
-            .stroke()
+            } .stroke()
             Path {
                 Stroke(points: Array(points[0..<4])).append(to:&$0)
-            }
-            .stroke()
+            }.stroke()
             Path {
                 Stroke(points: points).append(to:&$0)
-            }
-            .stroke()
+            } .stroke()
         }
     }
 }
+
