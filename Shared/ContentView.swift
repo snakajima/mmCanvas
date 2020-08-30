@@ -31,13 +31,6 @@ struct ContentView: View {
                         Spacer()
                     }
                     ToolbarItem(placement: .bottomBar) {
-                        Button(action: {
-                            self.canvas.markerMode.toggle()
-                        }) {
-                            Image(systemName: self.canvas.markerMode ? "pencil": "pencil.and.outline")
-                        }
-                    }
-                    ToolbarItem(placement: .bottomBar) {
                         Picker(selection: $canvas.drawMode, label: Text("")) {
                             Image(systemName: "pencil").tag(DrawMode.marker)
                             Image(systemName: "pencil.and.outline").tag(DrawMode.hiliter)

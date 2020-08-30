@@ -14,6 +14,5 @@ enum DrawMode :Int {
 
 struct Canvas {
     var strokes = [Stroke]()
-    var markerMode = true
     var drawMode = DrawMode.marker
 }
