@@ -31,7 +31,6 @@ struct CanvasView: View {
                 self.currentStroke = Stroke()
             })
         ZStack {
-            ParticleEmitter()
             Path {
                 for stroke in self.canvas.strokes {
                     stroke.append(to: &$0)
@@ -63,6 +62,7 @@ struct CanvasView: View {
                 .blur(radius:2)
             .opacity(self.opacity)
                 .animation(.easeOut)
+            ParticleEmitter()
         }
         .background(Color(white: 0.95))
         .gesture(drag)
