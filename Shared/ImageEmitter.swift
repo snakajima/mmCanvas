@@ -12,9 +12,10 @@ struct ImageElement {
 }
 
 struct ImageEmitter: View {
+    @Binding var elements:[ImageElement]
     var body: some View {
         VStack {
-            Text("Foo")
+            Text("Foo " + String(elements.count))
         }
     }
 }
@@ -33,7 +34,7 @@ struct ImageEmitter_Test: View {
     var body: some View {
         VStack {
             Text("Hello " + String(count))
-            ImageEmitter()
+            ImageEmitter(elements:$elements)
         }
         .position()
         .background(Color(.yellow))
