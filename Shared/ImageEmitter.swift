@@ -33,6 +33,10 @@ struct ImageElements {
         let element = ImageElement(location: location);
         elements.append(element)
     }
+    
+    mutating func clear() {
+        elements.removeAll()
+    }
 }
 
 struct ImageEmitter: View {
@@ -67,6 +71,8 @@ struct ImageEmitter_Test: View {
         .background(Color(.yellow))
         .gesture(DragGesture().onChanged({ value in
             self.elements.append(value.location)
+        }).onEnded({ _ in
+            self.elements.clear()
         }))
     }
 }
