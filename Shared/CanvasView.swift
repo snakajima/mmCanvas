@@ -23,7 +23,7 @@ struct CanvasView: View {
                 self.currentStroke.points.append(value.location)
             })
             .onEnded({ value in
-                self.dragging = false
+                self.isDragging = false
                 if (self.canvas.drawMode == .marker) {
                     self.canvas.strokes.append(self.currentStroke)
                 } else if  (self.canvas.drawMode == .hiliter) {
@@ -74,9 +74,9 @@ struct CanvasView: View {
                     let width = geometry.size.width
                     let height = geometry.size.height
                     let radius = min(width, height)/2
-                    let anchorX = (location.x / width - 0.5) * 1.33 + 0.5
-                    let anchorY = (location.y / height - 0.5) * 1.33 + 0.5
-                    let x = location.x
+                    let anchorX = (location.x / width - 0.5) * 1.25 + 0.5
+                    let anchorY = (location.y / height - 0.5) * 1.25 + 0.5
+                    let x = max(location.x, (location.x + width / 4.0) / 2.0)
                     let y = location.y
                     MyPDFView(canvas.url)
                         .scaleEffect(4.0, anchor: UnitPoint(x:anchorX, y:anchorY))
