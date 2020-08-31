@@ -37,6 +37,9 @@
 		747F503A24FCB81A0054FC83 /* MyPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F503924FCB81A0054FC83 /* MyPDFView.swift */; };
 		747F503B24FCB81A0054FC83 /* MyPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F503924FCB81A0054FC83 /* MyPDFView.swift */; };
 		747F503C24FCB81A0054FC83 /* MyPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F503924FCB81A0054FC83 /* MyPDFView.swift */; };
+		7491E7F124FD8D7C00387B15 /* ImageEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7491E7F024FD8D7C00387B15 /* ImageEmitter.swift */; };
+		7491E7F224FD8D7C00387B15 /* ImageEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7491E7F024FD8D7C00387B15 /* ImageEmitter.swift */; };
+		7491E7F324FD8D7C00387B15 /* ImageEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7491E7F024FD8D7C00387B15 /* ImageEmitter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,7 @@
 		747F502B24FCAD670054FC83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		747F503524FCB6AB0054FC83 /* teslaQ2_2020.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = teslaQ2_2020.pdf; sourceTree = "<group>"; };
 		747F503924FCB81A0054FC83 /* MyPDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPDFView.swift; sourceTree = "<group>"; };
+		7491E7F024FD8D7C00387B15 /* ImageEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEmitter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 				7433B58424F94AA000041FA5 /* Canvas.swift */,
 				7433B58124F92E2900041FA5 /* Stroke.swift */,
 				7433B57E24F92A4300041FA5 /* CanvasView.swift */,
+				7491E7F024FD8D7C00387B15 /* ImageEmitter.swift */,
 				7433B55F24F8AE6200041FA5 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -298,6 +303,7 @@
 			files = (
 				7433B57224F8AE6300041FA5 /* ContentView.swift in Sources */,
 				7433B57024F8AE6300041FA5 /* mmCanvasApp.swift in Sources */,
+				7491E7F124FD8D7C00387B15 /* ImageEmitter.swift in Sources */,
 				747F501524FBD29A0054FC83 /* ParticleEmitter.swift in Sources */,
 				747F503A24FCB81A0054FC83 /* MyPDFView.swift in Sources */,
 				7433B57F24F92A4300041FA5 /* CanvasView.swift in Sources */,
@@ -312,6 +318,7 @@
 			files = (
 				7433B57324F8AE6300041FA5 /* ContentView.swift in Sources */,
 				7433B57124F8AE6300041FA5 /* mmCanvasApp.swift in Sources */,
+				7491E7F224FD8D7C00387B15 /* ImageEmitter.swift in Sources */,
 				747F501624FBD29A0054FC83 /* ParticleEmitter.swift in Sources */,
 				747F503B24FCB81A0054FC83 /* MyPDFView.swift in Sources */,
 				7433B58024F92A4300041FA5 /* CanvasView.swift in Sources */,
@@ -325,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				747F501E24FCAD650054FC83 /* AppDelegate.swift in Sources */,
+				7491E7F324FD8D7C00387B15 /* ImageEmitter.swift in Sources */,
 				747F503324FCADEE0054FC83 /* CanvasView.swift in Sources */,
 				747F503424FCAE360054FC83 /* ContentView.swift in Sources */,
 				747F503224FCADEE0054FC83 /* Stroke.swift in Sources */,
