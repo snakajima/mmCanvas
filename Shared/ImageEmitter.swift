@@ -20,6 +20,12 @@ class ImageElement:Identifiable {
     }
 }
 
+struct ElementView: View {
+    var body: some View {
+        Image(systemName: "star")
+    }
+}
+
 struct ImageElements {
     var elements = [ImageElement]()
     mutating func append(_ location:CGPoint) {
@@ -35,7 +41,7 @@ struct ImageEmitter: View {
         VStack {
             ZStack {
                 ForEach(elements.elements) { element in
-                    Image(systemName: "star")
+                    ElementView()
                         .opacity(element.opacity)
                         .position(element.location)
                 }
