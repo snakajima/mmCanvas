@@ -7,15 +7,21 @@
 
 import SwiftUI
 
-struct ImageElement {
+struct ImageElement:Identifiable {
     var location:CGPoint
+    let id = UUID()
 }
 
 struct ImageEmitter: View {
     @Binding var elements:[ImageElement]
     var body: some View {
         VStack {
-            Text("Foo " + String(elements.count))
+            ZStack {
+                ForEach(elements) { element in
+                    Text("Foo")
+                        .position(element.location)
+                }
+            }
         }
     }
 }
@@ -36,7 +42,7 @@ struct ImageEmitter_Test: View {
             Text("Hello " + String(count))
             ImageEmitter(elements:$elements)
         }
-        .position()
+        .position(x:100)
         .background(Color(.yellow))
         .gesture(DragGesture().onChanged({ value in
             self.count = self.count + 1
