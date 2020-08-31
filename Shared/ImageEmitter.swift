@@ -72,7 +72,9 @@ struct ImageEmitter_Test: View {
         .gesture(DragGesture().onChanged({ value in
             self.elements.append(value.location)
         }).onEnded({ _ in
-            self.elements.clear()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.elements.clear()
+            }
         }))
     }
 }
