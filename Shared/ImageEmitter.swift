@@ -15,6 +15,9 @@ struct ImageElement:Identifiable {
 
 struct ImageElements {
     var elements = [ImageElement]()
+    mutating func append(_ location:CGPoint) {
+        elements.append(ImageElement(location: location))
+    }
 }
 
 struct ImageEmitter: View {
@@ -49,7 +52,7 @@ struct ImageEmitter_Test: View {
         .position(x:100)
         .background(Color(.yellow))
         .gesture(DragGesture().onChanged({ value in
-            self.elements.elements.append(ImageElement(location: value.location))
+            self.elements.append(value.location)
         }))
     }
 }
