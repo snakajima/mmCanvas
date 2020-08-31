@@ -9,7 +9,6 @@ import SwiftUI
 
 class ImageElement:Identifiable {
     var location:CGPoint
-    let id = UUID()
     var opacity = 1.0
     init(location:CGPoint) {
         self.location = location
