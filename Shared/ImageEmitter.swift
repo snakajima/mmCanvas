@@ -7,16 +7,26 @@
 
 import SwiftUI
 
-struct ImageElement:Identifiable {
+class ImageElement:Identifiable {
     var location:CGPoint
     let id = UUID()
     var opacity = 1.0
+    init(location:CGPoint) {
+        self.location = location
+    }
+    func startFade() {
+        withAnimation {
+            self.opacity = 0.3
+        }
+    }
 }
 
 struct ImageElements {
     var elements = [ImageElement]()
     mutating func append(_ location:CGPoint) {
-        elements.append(ImageElement(location: location))
+        let element = ImageElement(location: location);
+        elements.append(element)
+        element.startFade()
     }
 }
 
