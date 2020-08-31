@@ -72,8 +72,9 @@ struct CanvasView: View {
                 //ParticleEmitter()
                 if self.canvas.drawMode == .zoomer && self.dragging {
                     let radius = min(geometry.size.width, geometry.size.height)/3
+                    let anchor = UnitPoint(x:location.x / geometry.size.width, y:location.y / geometry.size.height)
                     MyPDFView(self.canvas.url)
-                        .scaleEffect(10.0)
+                        .scaleEffect(10.0, anchor: anchor)
                         .frame(width:radius,height:radius)
                         .clipShape(Circle())
                         .position(self.location)
