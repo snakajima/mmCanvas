@@ -15,6 +15,7 @@ struct MyPDFView: UIViewRepresentable {
     }
     func makeUIView(context: Context) -> some UIView {
         let pdfView = PDFView()
+        pdfView.isUserInteractionEnabled = false
         if let url = self.url {
             pdfView.document = PDFDocument(url: url)
             pdfView.autoScales = true
