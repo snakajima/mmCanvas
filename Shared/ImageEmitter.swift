@@ -18,7 +18,7 @@ struct ImageEmitter: View {
         VStack {
             ZStack {
                 ForEach(elements) { element in
-                    Text("Foo")
+                    Image(systemName: "star")
                         .position(element.location)
                 }
             }
@@ -36,16 +36,13 @@ struct ImageEmitter_Previews: PreviewProvider {
 
 struct ImageEmitter_Test: View {
     @State var elements = [ImageElement]()
-    @State var count = 0
     var body: some View {
         VStack {
-            Text("Hello " + String(count))
             ImageEmitter(elements:$elements)
         }
         .position(x:100)
         .background(Color(.yellow))
         .gesture(DragGesture().onChanged({ value in
-            self.count = self.count + 1
             self.elements.append(ImageElement(location: value.location))
         }))
     }
