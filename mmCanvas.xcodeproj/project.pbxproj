@@ -31,6 +31,12 @@
 		747F503224FCADEE0054FC83 /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433B58124F92E2900041FA5 /* Stroke.swift */; };
 		747F503324FCADEE0054FC83 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433B57E24F92A4300041FA5 /* CanvasView.swift */; };
 		747F503424FCAE360054FC83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F502124FCAD650054FC83 /* ContentView.swift */; };
+		747F503624FCB6AB0054FC83 /* teslaQ2_2020.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 747F503524FCB6AB0054FC83 /* teslaQ2_2020.pdf */; };
+		747F503724FCB6AB0054FC83 /* teslaQ2_2020.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 747F503524FCB6AB0054FC83 /* teslaQ2_2020.pdf */; };
+		747F503824FCB6AB0054FC83 /* teslaQ2_2020.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 747F503524FCB6AB0054FC83 /* teslaQ2_2020.pdf */; };
+		747F503A24FCB81A0054FC83 /* MyPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F503924FCB81A0054FC83 /* MyPDFView.swift */; };
+		747F503B24FCB81A0054FC83 /* MyPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F503924FCB81A0054FC83 /* MyPDFView.swift */; };
+		747F503C24FCB81A0054FC83 /* MyPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F503924FCB81A0054FC83 /* MyPDFView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +60,8 @@
 		747F502624FCAD670054FC83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		747F502924FCAD670054FC83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		747F502B24FCAD670054FC83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		747F503524FCB6AB0054FC83 /* teslaQ2_2020.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = teslaQ2_2020.pdf; sourceTree = "<group>"; };
+		747F503924FCB81A0054FC83 /* MyPDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPDFView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +103,11 @@
 		7433B55C24F8AE6100041FA5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				747F503524FCB6AB0054FC83 /* teslaQ2_2020.pdf */,
 				7433B55D24F8AE6100041FA5 /* mmCanvasApp.swift */,
 				7433B55E24F8AE6100041FA5 /* ContentView.swift */,
 				747F501424FBD29A0054FC83 /* ParticleEmitter.swift */,
+				747F503924FCB81A0054FC83 /* MyPDFView.swift */,
 				7433B58424F94AA000041FA5 /* Canvas.swift */,
 				7433B58124F92E2900041FA5 /* Stroke.swift */,
 				7433B57E24F92A4300041FA5 /* CanvasView.swift */,
@@ -255,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7433B57424F8AE6300041FA5 /* Assets.xcassets in Resources */,
+				747F503624FCB6AB0054FC83 /* teslaQ2_2020.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7433B57524F8AE6300041FA5 /* Assets.xcassets in Resources */,
+				747F503724FCB6AB0054FC83 /* teslaQ2_2020.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +285,7 @@
 				747F502A24FCAD670054FC83 /* LaunchScreen.storyboard in Resources */,
 				747F502724FCAD670054FC83 /* Preview Assets.xcassets in Resources */,
 				747F502424FCAD670054FC83 /* Assets.xcassets in Resources */,
+				747F503824FCB6AB0054FC83 /* teslaQ2_2020.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +299,7 @@
 				7433B57224F8AE6300041FA5 /* ContentView.swift in Sources */,
 				7433B57024F8AE6300041FA5 /* mmCanvasApp.swift in Sources */,
 				747F501524FBD29A0054FC83 /* ParticleEmitter.swift in Sources */,
+				747F503A24FCB81A0054FC83 /* MyPDFView.swift in Sources */,
 				7433B57F24F92A4300041FA5 /* CanvasView.swift in Sources */,
 				7433B58524F94AA100041FA5 /* Canvas.swift in Sources */,
 				7433B58224F92E2900041FA5 /* Stroke.swift in Sources */,
@@ -299,6 +313,7 @@
 				7433B57324F8AE6300041FA5 /* ContentView.swift in Sources */,
 				7433B57124F8AE6300041FA5 /* mmCanvasApp.swift in Sources */,
 				747F501624FBD29A0054FC83 /* ParticleEmitter.swift in Sources */,
+				747F503B24FCB81A0054FC83 /* MyPDFView.swift in Sources */,
 				7433B58024F92A4300041FA5 /* CanvasView.swift in Sources */,
 				7433B58624F94AA100041FA5 /* Canvas.swift in Sources */,
 				7433B58324F92E2900041FA5 /* Stroke.swift in Sources */,
@@ -314,6 +329,7 @@
 				747F503424FCAE360054FC83 /* ContentView.swift in Sources */,
 				747F503224FCADEE0054FC83 /* Stroke.swift in Sources */,
 				747F502024FCAD650054FC83 /* SceneDelegate.swift in Sources */,
+				747F503C24FCB81A0054FC83 /* MyPDFView.swift in Sources */,
 				747F503124FCADEE0054FC83 /* Canvas.swift in Sources */,
 				747F502F24FCADEE0054FC83 /* ParticleEmitter.swift in Sources */,
 			);
