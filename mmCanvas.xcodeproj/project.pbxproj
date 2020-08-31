@@ -21,6 +21,16 @@
 		7433B58624F94AA100041FA5 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433B58424F94AA000041FA5 /* Canvas.swift */; };
 		747F501524FBD29A0054FC83 /* ParticleEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F501424FBD29A0054FC83 /* ParticleEmitter.swift */; };
 		747F501624FBD29A0054FC83 /* ParticleEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F501424FBD29A0054FC83 /* ParticleEmitter.swift */; };
+		747F501E24FCAD650054FC83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F501D24FCAD650054FC83 /* AppDelegate.swift */; };
+		747F502024FCAD650054FC83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F501F24FCAD650054FC83 /* SceneDelegate.swift */; };
+		747F502424FCAD670054FC83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 747F502324FCAD670054FC83 /* Assets.xcassets */; };
+		747F502724FCAD670054FC83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 747F502624FCAD670054FC83 /* Preview Assets.xcassets */; };
+		747F502A24FCAD670054FC83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 747F502824FCAD670054FC83 /* LaunchScreen.storyboard */; };
+		747F502F24FCADEE0054FC83 /* ParticleEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F501424FBD29A0054FC83 /* ParticleEmitter.swift */; };
+		747F503124FCADEE0054FC83 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433B58424F94AA000041FA5 /* Canvas.swift */; };
+		747F503224FCADEE0054FC83 /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433B58124F92E2900041FA5 /* Stroke.swift */; };
+		747F503324FCADEE0054FC83 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433B57E24F92A4300041FA5 /* CanvasView.swift */; };
+		747F503424FCAE360054FC83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F502124FCAD650054FC83 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +46,14 @@
 		7433B58124F92E2900041FA5 /* Stroke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stroke.swift; sourceTree = "<group>"; };
 		7433B58424F94AA000041FA5 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		747F501424FBD29A0054FC83 /* ParticleEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleEmitter.swift; sourceTree = "<group>"; };
+		747F501B24FCAD650054FC83 /* mmCanvas13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mmCanvas13.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		747F501D24FCAD650054FC83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		747F501F24FCAD650054FC83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		747F502124FCAD650054FC83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		747F502324FCAD670054FC83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		747F502624FCAD670054FC83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		747F502924FCAD670054FC83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		747F502B24FCAD670054FC83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +71,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		747F501824FCAD650054FC83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -62,6 +87,7 @@
 				7433B55C24F8AE6100041FA5 /* Shared */,
 				7433B56624F8AE6200041FA5 /* iOS */,
 				7433B56D24F8AE6300041FA5 /* macOS */,
+				747F501C24FCAD650054FC83 /* mmCanvas13 */,
 				7433B56524F8AE6200041FA5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,6 +111,7 @@
 			children = (
 				7433B56424F8AE6200041FA5 /* mmCanvas.app */,
 				7433B56C24F8AE6300041FA5 /* mmCanvas.app */,
+				747F501B24FCAD650054FC83 /* mmCanvas13.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,6 +131,28 @@
 				7433B56F24F8AE6300041FA5 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		747F501C24FCAD650054FC83 /* mmCanvas13 */ = {
+			isa = PBXGroup;
+			children = (
+				747F501D24FCAD650054FC83 /* AppDelegate.swift */,
+				747F501F24FCAD650054FC83 /* SceneDelegate.swift */,
+				747F502124FCAD650054FC83 /* ContentView.swift */,
+				747F502324FCAD670054FC83 /* Assets.xcassets */,
+				747F502824FCAD670054FC83 /* LaunchScreen.storyboard */,
+				747F502B24FCAD670054FC83 /* Info.plist */,
+				747F502524FCAD670054FC83 /* Preview Content */,
+			);
+			path = mmCanvas13;
+			sourceTree = "<group>";
+		};
+		747F502524FCAD670054FC83 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				747F502624FCAD670054FC83 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +192,23 @@
 			productReference = 7433B56C24F8AE6300041FA5 /* mmCanvas.app */;
 			productType = "com.apple.product-type.application";
 		};
+		747F501A24FCAD650054FC83 /* mmCanvas13 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 747F502C24FCAD670054FC83 /* Build configuration list for PBXNativeTarget "mmCanvas13" */;
+			buildPhases = (
+				747F501724FCAD650054FC83 /* Sources */,
+				747F501824FCAD650054FC83 /* Frameworks */,
+				747F501924FCAD650054FC83 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mmCanvas13;
+			productName = mmCanvas13;
+			productReference = 747F501B24FCAD650054FC83 /* mmCanvas13.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -156,6 +222,9 @@
 						CreatedOnToolsVersion = 12.0;
 					};
 					7433B56B24F8AE6300041FA5 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					747F501A24FCAD650054FC83 = {
 						CreatedOnToolsVersion = 12.0;
 					};
 				};
@@ -175,6 +244,7 @@
 			targets = (
 				7433B56324F8AE6200041FA5 /* mmCanvas (iOS) */,
 				7433B56B24F8AE6300041FA5 /* mmCanvas (macOS) */,
+				747F501A24FCAD650054FC83 /* mmCanvas13 */,
 			);
 		};
 /* End PBXProject section */
@@ -193,6 +263,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7433B57524F8AE6300041FA5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		747F501924FCAD650054FC83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				747F502A24FCAD670054FC83 /* LaunchScreen.storyboard in Resources */,
+				747F502724FCAD670054FC83 /* Preview Assets.xcassets in Resources */,
+				747F502424FCAD670054FC83 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +305,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		747F501724FCAD650054FC83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				747F501E24FCAD650054FC83 /* AppDelegate.swift in Sources */,
+				747F503324FCADEE0054FC83 /* CanvasView.swift in Sources */,
+				747F503424FCAE360054FC83 /* ContentView.swift in Sources */,
+				747F503224FCADEE0054FC83 /* Stroke.swift in Sources */,
+				747F502024FCAD650054FC83 /* SceneDelegate.swift in Sources */,
+				747F503124FCADEE0054FC83 /* Canvas.swift in Sources */,
+				747F502F24FCADEE0054FC83 /* ParticleEmitter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		747F502824FCAD670054FC83 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				747F502924FCAD670054FC83 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7433B57624F8AE6300041FA5 /* Debug */ = {
@@ -432,6 +537,53 @@
 			};
 			name = Release;
 		};
+		747F502D24FCAD670054FC83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"mmCanvas13/Preview Content\"";
+				DEVELOPMENT_TEAM = H34BY2CCCD;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = mmCanvas13/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.singularitysociety.mmCanvas13;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		747F502E24FCAD670054FC83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"mmCanvas13/Preview Content\"";
+				DEVELOPMENT_TEAM = H34BY2CCCD;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = mmCanvas13/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.singularitysociety.mmCanvas13;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -458,6 +610,15 @@
 			buildConfigurations = (
 				7433B57C24F8AE6300041FA5 /* Debug */,
 				7433B57D24F8AE6300041FA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		747F502C24FCAD670054FC83 /* Build configuration list for PBXNativeTarget "mmCanvas13" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				747F502D24FCAD670054FC83 /* Debug */,
+				747F502E24FCAD670054FC83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
