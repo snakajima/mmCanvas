@@ -10,6 +10,7 @@ import SwiftUI
 struct ImageElement:Identifiable {
     var location:CGPoint
     let id = UUID()
+    var opacity = 1.0
 }
 
 struct ImageEmitter: View {
@@ -19,6 +20,7 @@ struct ImageEmitter: View {
             ZStack {
                 ForEach(elements) { element in
                     Image(systemName: "star")
+                        .opacity(element.opacity)
                         .position(element.location)
                 }
             }
