@@ -9,20 +9,21 @@ import SwiftUI
 
 class ImageElement:Identifiable {
     var location:CGPoint
-    var opacity = 1.0
     init(location:CGPoint) {
         self.location = location
-    }
-    func startFade() {
-        withAnimation {
-            self.opacity = 0.3
-        }
     }
 }
 
 struct ElementView: View {
+    @State var opacity = 1.0
     var body: some View {
         Image(systemName: "star")
+            .onAppear {
+                withAnimation(Animation.easeInOut(duration: 1.0)) {
+                    self.opacity = 0.0
+                }
+            }
+            .opacity(opacity)
     }
 }
 
@@ -31,7 +32,6 @@ struct ImageElements {
     mutating func append(_ location:CGPoint) {
         let element = ImageElement(location: location);
         elements.append(element)
-        element.startFade()
     }
 }
 
@@ -42,7 +42,6 @@ struct ImageEmitter: View {
             ZStack {
                 ForEach(elements.elements) { element in
                     ElementView()
-                        .opacity(element.opacity)
                         .position(element.location)
                 }
             }
