@@ -9,15 +9,17 @@ import SwiftUI
 import PDFKit
 
 struct MyPDFView: UIViewRepresentable {
-    let url: URL
-    init(_ url:URL) {
+    let url: URL?
+    init(_ url:URL?) {
         self.url = url
     }
     func makeUIView(context: Context) -> some UIView {
         let pdfView = PDFView()
-        pdfView.document = PDFDocument(url: self.url)
-        pdfView.autoScales = true
-        pdfView.displayMode = .singlePage
+        if let url = self.url {
+            pdfView.document = PDFDocument(url: url)
+            pdfView.autoScales = true
+            pdfView.displayMode = .singlePage
+        }
         return pdfView
     }
     

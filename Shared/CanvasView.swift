@@ -31,13 +31,7 @@ struct CanvasView: View {
                 self.currentStroke = Stroke()
             })
         ZStack {
-            if let url = self.canvas.url {
-                MyPDFView(url)
-                MyPDFView(url)
-                    .scaleEffect(10.0)
-                    .frame(width:100,height:100)
-                    .clipShape(Circle())
-            }
+            MyPDFView(self.canvas.url)
             Path {
                 for stroke in self.canvas.strokes {
                     stroke.append(to: &$0)
@@ -67,9 +61,13 @@ struct CanvasView: View {
                 .stroke(style:self.hiliteStyle)
                 .fill(self.hiliteColor)
                 .blur(radius:2)
-            .opacity(self.opacity)
+                .opacity(self.opacity)
                 .animation(.easeOut)
             //ParticleEmitter()
+            MyPDFView(self.canvas.url)
+                .scaleEffect(10.0)
+                .frame(width:100,height:100)
+                .clipShape(Circle())
         }
         .background(Color(white: 0.95))
         .gesture(drag)
