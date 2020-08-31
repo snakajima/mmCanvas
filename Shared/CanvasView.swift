@@ -12,13 +12,13 @@ struct CanvasView: View {
     @State var currentStroke = Stroke()
     @State var hilite = Stroke()
     @State var opacity = 0.0
-    @State var dragging = false
+    @State var isDragging = false
     @State var location = CGPoint.zero
 
     var body: some View {
         let drag = DragGesture(minimumDistance: 0.1)
             .onChanged({ value in
-                self.dragging = true
+                self.isDragging = true
                 self.location = value.location
                 self.currentStroke.points.append(value.location)
             })
@@ -35,7 +35,7 @@ struct CanvasView: View {
                 }
                 self.currentStroke = Stroke()
             })
-        GeometryReader { (geometry) in
+        GeometryReader { geometry in
             ZStack {
                 MyPDFView(self.canvas.url)
                 Path {
@@ -70,14 +70,19 @@ struct CanvasView: View {
                     .opacity(self.opacity)
                     .animation(.easeOut)
                 //ParticleEmitter()
-                if self.canvas.drawMode == .zoomer && self.dragging {
-                    let radius = min(geometry.size.width, geometry.size.height)/2
-                    let anchor = UnitPoint(x:location.x / geometry.size.width, y:location.y / geometry.size.height)
-                    MyPDFView(self.canvas.url)
-                        .scaleEffect(5.0, anchor: anchor)
+                if self.canvas.drawMode == .zoomer && isDragging {
+                    let width = geometry.size.width
+                    let height = geometry.size.height
+                    let radius = min(width, height)/2
+                    let anchorX = (location.x / width - 0.5) * 1.33 + 0.5
+                    let anchorY = (location.y / height - 0.5) * 1.33 + 0.5
+                    let x = location.x
+                    let y = location.y
+                    MyPDFView(canvas.url)
+                        .scaleEffect(4.0, anchor: UnitPoint(x:anchorX, y:anchorY))
                         .frame(width:radius,height:radius)
                         .clipShape(Circle())
-                        .position(self.location)
+                        .position(CGPoint(x:x,y:y))
                 }
             }
         }
