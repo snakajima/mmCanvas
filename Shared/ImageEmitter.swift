@@ -57,12 +57,11 @@ struct ImageEmitter_Previews: PreviewProvider {
 
 struct ImageEmitter_Test: View {
     @State var count = 0
-    //@State var images = AnimatedImages()
+    @State var images = AnimatedImages()
     var body: some View {
         VStack {
             Text("Hello " + String(count))
-            /*ImageEmitter(images:images)
-                .position(CGPoint(x:10, y:10))*/
+            ImageEmitter(images:images)
         }
         .background(Color(.yellow))
         .gesture(TapGesture().onEnded({ value in
