@@ -35,46 +35,48 @@ struct CanvasView: View {
                 }
                 self.currentStroke = Stroke()
             })
-        ZStack {
-            MyPDFView(self.canvas.url)
-            Path {
-                for stroke in self.canvas.strokes {
-                    stroke.append(to: &$0)
-                }
-            }
-                .stroke(style:self.markerStyle)
-                .fill(self.markerColor)
-
-            if (self.canvas.drawMode == .marker) {
+        GeometryReader { (geometry) in
+            ZStack {
+                MyPDFView(self.canvas.url)
                 Path {
-                    self.currentStroke.append(to: &$0)
+                    for stroke in self.canvas.strokes {
+                        stroke.append(to: &$0)
+                    }
                 }
                     .stroke(style:self.markerStyle)
                     .fill(self.markerColor)
 
-            } else if (self.canvas.drawMode == .hiliter) {
+                if (self.canvas.drawMode == .marker) {
+                    Path {
+                        self.currentStroke.append(to: &$0)
+                    }
+                        .stroke(style:self.markerStyle)
+                        .fill(self.markerColor)
+
+                } else if (self.canvas.drawMode == .hiliter) {
+                    Path {
+                        self.currentStroke.append(to: &$0)
+                    }
+                        .stroke(style:self.hiliteStyle)
+                        .fill(self.hiliteColor)
+                        .blur(radius:2)
+                }
                 Path {
-                    self.currentStroke.append(to: &$0)
+                    self.hilite.append(to: &$0)
                 }
                     .stroke(style:self.hiliteStyle)
                     .fill(self.hiliteColor)
                     .blur(radius:2)
-            }
-            Path {
-                self.hilite.append(to: &$0)
-            }
-                .stroke(style:self.hiliteStyle)
-                .fill(self.hiliteColor)
-                .blur(radius:2)
-                .opacity(self.opacity)
-                .animation(.easeOut)
-            //ParticleEmitter()
-            if self.canvas.drawMode == .zoomer && self.dragging {
-                MyPDFView(self.canvas.url)
-                    .scaleEffect(10.0)
-                    .frame(width:100,height:100)
-                    .clipShape(Circle())
-                    .position(self.location)
+                    .opacity(self.opacity)
+                    .animation(.easeOut)
+                //ParticleEmitter()
+                if self.canvas.drawMode == .zoomer && self.dragging {
+                    MyPDFView(self.canvas.url)
+                        .scaleEffect(10.0)
+                        .frame(width:100,height:100)
+                        .clipShape(Circle())
+                        .position(self.location)
+                }
             }
         }
         .background(Color(white: 0.95))
