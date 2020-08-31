@@ -76,8 +76,10 @@ struct CanvasView: View {
                     let radius = min(width, height)/2
                     let anchorX = (location.x / width - 0.5) * 1.25 + 0.5
                     let anchorY = (location.y / height - 0.5) * 1.25 + 0.5
-                    let x = max(location.x, (location.x + width / 4.0) / 2.0)
-                    let y = max(location.y, (location.y + height / 4.0) / 2.0)
+                    let x = min(max(location.x, (location.x + width * 0.25) / 2.0),
+                                (location.x + width * 0.75) / 2.0)
+                    let y = min(max(location.y, (location.y + height * 0.25) / 2.0),
+                                (location.y + height * 0.75) / 2.0)
                     MyPDFView(canvas.url)
                         .scaleEffect(4.0, anchor: UnitPoint(x:anchorX, y:anchorY))
                         .frame(width:radius,height:radius)
