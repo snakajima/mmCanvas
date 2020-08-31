@@ -62,7 +62,7 @@ struct CanvasView: View {
                 .blur(radius:2)
             .opacity(self.opacity)
                 .animation(.easeOut)
-            ParticleEmitter()
+            //ParticleEmitter()
         }
         .background(Color(white: 0.95))
         .gesture(drag)
