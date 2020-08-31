@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+struct ImageElement {
+    var location:CGPoint
+}
+
 struct ImageEmitter: View {
     var body: some View {
         VStack {
@@ -24,6 +28,7 @@ struct ImageEmitter_Previews: PreviewProvider {
 }
 
 struct ImageEmitter_Test: View {
+    @State var elements = [ImageElement]()
     @State var count = 0
     var body: some View {
         VStack {
@@ -34,6 +39,7 @@ struct ImageEmitter_Test: View {
         .background(Color(.yellow))
         .gesture(DragGesture().onChanged({ value in
             self.count = self.count + 1
+            self.elements.append(ImageElement(location: value.location))
         }))
     }
 }
