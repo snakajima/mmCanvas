@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var canvas = Canvas()
+    static let url = Bundle.main.url(forResource: "teslaQ2_2020", withExtension: "pdf")!
+    @State private var canvas = Canvas(url:url)
     var body: some View {
         VStack {
             CanvasView(canvas: $canvas)

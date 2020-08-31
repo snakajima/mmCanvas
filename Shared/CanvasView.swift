@@ -14,7 +14,6 @@ struct CanvasView: View {
     @State var opacity = 0.0
 
     var body: some View {
-        let url = Bundle.main.url(forResource: "teslaQ2_2020", withExtension: "pdf")!
         let drag = DragGesture(minimumDistance: 0.1)
             .onChanged({ value in
                 self.currentStroke.points.append(value.location)
@@ -32,7 +31,9 @@ struct CanvasView: View {
                 self.currentStroke = Stroke()
             })
         ZStack {
-            MyPDFView(url)
+            if let url = self.canvas.url {
+                MyPDFView(url)
+            }
             Path {
                 for stroke in self.canvas.strokes {
                     stroke.append(to: &$0)
@@ -85,7 +86,8 @@ struct Canvas_Previews: PreviewProvider {
 }
 
 struct Canvas_Instance: View {
-    @State private var canvas = Canvas(drawMode:DrawMode.hiliter)
+    static let url = Bundle.main.url(forResource: "teslaQ2_2020", withExtension: "pdf")!
+    @State private var canvas = Canvas(drawMode:DrawMode.hiliter, url:url)
     
     var body: some View {
         VStack(alignment: .center) {

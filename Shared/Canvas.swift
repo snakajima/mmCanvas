@@ -16,4 +16,5 @@ enum DrawMode :Int {
 struct Canvas {
     var strokes = [Stroke]()
     var drawMode = DrawMode.marker
+    var url:URL? = nil
 }
