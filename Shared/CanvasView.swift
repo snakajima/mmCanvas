@@ -95,7 +95,7 @@ struct CanvasView: View {
     let markerStyle = StrokeStyle(lineWidth: 3.0, lineCap: CGLineCap.round, lineJoin: CGLineJoin.round, miterLimit: 0.1, dash: [], dashPhase: 0)
     let hiliteStyle = StrokeStyle(lineWidth: 30.0, lineCap: CGLineCap.round, lineJoin: CGLineJoin.round, miterLimit: 0.1, dash: [], dashPhase: 0)
     let markerColor = Color(.blue)
-    let hiliteColor = Color(Color.RGBColorSpace.sRGB, red: 1.0, green: 0, blue: 0, opacity: 0.2)
+    let hiliteColor = Color(Color.RGBColorSpace.sRGB, red: 0.0, green: 0, blue: 1.0, opacity: 0.2)
 }
 
 
@@ -108,7 +108,7 @@ struct Canvas_Previews: PreviewProvider {
 
 struct Canvas_Instance: View {
     static let url = Bundle.main.url(forResource: "teslaQ2_2020", withExtension: "pdf")!
-    @State private var canvas = Canvas(drawMode:DrawMode.zoomer, url:url)
+    @State private var canvas = Canvas(drawMode:DrawMode.hiliter, url:url)
     
     var body: some View {
         VStack(alignment: .center) {
