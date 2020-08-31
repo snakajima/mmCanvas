@@ -13,12 +13,16 @@ struct ImageElement:Identifiable {
     var opacity = 1.0
 }
 
+struct ImageElements {
+    var elements = [ImageElement]()
+}
+
 struct ImageEmitter: View {
-    @Binding var elements:[ImageElement]
+    @Binding var elements:ImageElements
     var body: some View {
         VStack {
             ZStack {
-                ForEach(elements) { element in
+                ForEach(elements.elements) { element in
                     Image(systemName: "star")
                         .opacity(element.opacity)
                         .position(element.location)
@@ -37,7 +41,7 @@ struct ImageEmitter_Previews: PreviewProvider {
 }
 
 struct ImageEmitter_Test: View {
-    @State var elements = [ImageElement]()
+    @State var elements = ImageElements()
     var body: some View {
         VStack {
             ImageEmitter(elements:$elements)
@@ -45,7 +49,7 @@ struct ImageEmitter_Test: View {
         .position(x:100)
         .background(Color(.yellow))
         .gesture(DragGesture().onChanged({ value in
-            self.elements.append(ImageElement(location: value.location))
+            self.elements.elements.append(ImageElement(location: value.location))
         }))
     }
 }
