@@ -73,15 +73,15 @@ struct CanvasView: View {
                 if self.canvas.drawMode == .zoomer && isDragging {
                     let width = geometry.size.width
                     let height = geometry.size.height
-                    let radius = min(width, height)/2
-                    let anchorX = (location.x / width - 0.5) * 1.25 + 0.5
-                    let anchorY = (location.y / height - 0.5) * 1.25 + 0.5
+                    let radius = max(width, height) / 2.0
+                    let anchorX = (location.x / width - 0.5) * 1.2 + 0.5
+                    let anchorY = (location.y / height - 0.5) * 1.2 + 0.5
                     let x = min(max(location.x, (location.x + width * 0.25) / 2.0),
                                 (location.x + width * 0.75) / 2.0)
                     let y = min(max(location.y, (location.y + height * 0.25) / 2.0),
                                 (location.y + height * 0.75) / 2.0)
                     MyPDFView(canvas.url)
-                        .scaleEffect(4.0, anchor: UnitPoint(x:anchorX, y:anchorY))
+                        .scaleEffect(5.0, anchor: UnitPoint(x:anchorX, y:anchorY))
                         .frame(width:radius,height:radius)
                         .clipShape(Circle())
                         .position(CGPoint(x:x,y:y))
