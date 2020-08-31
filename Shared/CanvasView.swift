@@ -13,11 +13,13 @@ struct CanvasView: View {
     @State var hilite = Stroke()
     @State var opacity = 0.0
     @State var dragging = false
+    @State var location = CGPoint.zero
 
     var body: some View {
         let drag = DragGesture(minimumDistance: 0.1)
             .onChanged({ value in
                 self.dragging = true
+                self.location = value.location
                 self.currentStroke.points.append(value.location)
             })
             .onEnded({ value in
@@ -72,6 +74,7 @@ struct CanvasView: View {
                     .scaleEffect(10.0)
                     .frame(width:100,height:100)
                     .clipShape(Circle())
+                    .position(self.location)
             }
         }
         .background(Color(white: 0.95))
