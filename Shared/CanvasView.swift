@@ -12,13 +12,16 @@ struct CanvasView: View {
     @State var currentStroke = Stroke()
     @State var hilite = Stroke()
     @State var opacity = 0.0
+    @State var dragging = false
 
     var body: some View {
         let drag = DragGesture(minimumDistance: 0.1)
             .onChanged({ value in
+                self.dragging = true
                 self.currentStroke.points.append(value.location)
             })
             .onEnded({ value in
+                self.dragging = false
                 if (self.canvas.drawMode == .marker) {
                     self.canvas.strokes.append(self.currentStroke)
                 } else if  (self.canvas.drawMode == .hiliter) {
@@ -64,10 +67,12 @@ struct CanvasView: View {
                 .opacity(self.opacity)
                 .animation(.easeOut)
             //ParticleEmitter()
-            MyPDFView(self.canvas.url)
-                .scaleEffect(10.0)
-                .frame(width:100,height:100)
-                .clipShape(Circle())
+            if self.canvas.drawMode == .zoomer && self.dragging {
+                MyPDFView(self.canvas.url)
+                    .scaleEffect(10.0)
+                    .frame(width:100,height:100)
+                    .clipShape(Circle())
+            }
         }
         .background(Color(white: 0.95))
         .gesture(drag)
@@ -89,7 +94,7 @@ struct Canvas_Previews: PreviewProvider {
 
 struct Canvas_Instance: View {
     static let url = Bundle.main.url(forResource: "teslaQ2_2020", withExtension: "pdf")!
-    @State private var canvas = Canvas(drawMode:DrawMode.hiliter, url:url)
+    @State private var canvas = Canvas(drawMode:DrawMode.zoomer, url:url)
     
     var body: some View {
         VStack(alignment: .center) {

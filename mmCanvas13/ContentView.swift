@@ -28,6 +28,7 @@ struct ContentView: View {
                 Picker(selection: $canvas.drawMode, label: Text("")) {
                     Image(systemName: "pencil").tag(DrawMode.marker)
                     Image(systemName: "pencil.and.outline").tag(DrawMode.hiliter)
+                    Image(systemName: "circle" ).tag(DrawMode.zoomer)
                     //Image(systemName: "star").tag(DrawMode.emitter)
                  }
                 .pickerStyle(SegmentedPickerStyle())
