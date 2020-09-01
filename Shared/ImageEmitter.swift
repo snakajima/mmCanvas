@@ -16,14 +16,17 @@ class ImageElement:Identifiable {
 
 struct ElementView: View {
     @State var opacity = 1.0
+    @State var offset = CGSize.zero
     var body: some View {
         Image(systemName: "star")
             .onAppear {
                 withAnimation(Animation.easeInOut(duration: 1.0)) {
                     self.opacity = 0.0
+                    self.offset = CGSize(width: 0.0, height:-20.0)
                 }
             }
             .opacity(opacity)
+            .offset(offset)
     }
 }
 
