@@ -14,6 +14,7 @@ struct CanvasView: View {
     @State var opacity = 0.0
     @State var isDragging = false
     @State var location = CGPoint.zero
+    @State var elements = ImageElements()
 
     var body: some View {
         let drag = DragGesture(minimumDistance: 0.1)
@@ -21,16 +22,23 @@ struct CanvasView: View {
                 self.isDragging = true
                 self.location = value.location
                 self.currentStroke.points.append(value.location)
+                if self.canvas.drawMode == .emitter {
+                    self.elements.append(value.location)
+                }
             })
             .onEnded({ value in
                 self.isDragging = false
-                if (self.canvas.drawMode == .marker) {
+                if self.canvas.drawMode == .marker {
                     self.canvas.strokes.append(self.currentStroke)
-                } else if  (self.canvas.drawMode == .hiliter) {
+                } else if self.canvas.drawMode == .hiliter {
                     self.hilite = self.currentStroke
                     self.opacity = 1.0
                     withAnimation {
                         self.opacity = 0.0
+                    }
+                } else if self.canvas.drawMode == .emitter {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        self.elements.clear()
                     }
                 }
                 self.currentStroke = Stroke()
@@ -69,6 +77,7 @@ struct CanvasView: View {
                     .blur(radius:2)
                     .opacity(self.opacity)
                     .animation(.easeOut)
+                ImageEmitter(elements:$elements)
                 //ParticleEmitter()
                 if self.canvas.drawMode == .zoomer && isDragging {
                     let width = geometry.size.width
@@ -108,7 +117,7 @@ struct Canvas_Previews: PreviewProvider {
 
 struct Canvas_Instance: View {
     static let url = Bundle.main.url(forResource: "teslaQ2_2020", withExtension: "pdf")!
-    @State private var canvas = Canvas(drawMode:DrawMode.hiliter, url:url)
+    @State private var canvas = Canvas(drawMode:DrawMode.emitter, url:url)
     
     var body: some View {
         VStack(alignment: .center) {

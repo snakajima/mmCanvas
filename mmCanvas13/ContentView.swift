@@ -28,12 +28,13 @@ struct ContentView: View {
                 Picker(selection: $canvas.drawMode, label: Text("")) {
                     Image(systemName: "pencil").tag(DrawMode.marker)
                     Image(systemName: "pencil.and.outline").tag(DrawMode.hiliter)
+                    Image(systemName: "star" ).tag(DrawMode.emitter)
                     Image(systemName: "circle" ).tag(DrawMode.zoomer)
                     //Image(systemName: "star").tag(DrawMode.emitter)
                  }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding(.horizontal, 10)
-                .frame(width: 100)
+                .frame(width: 200)
             }
         }
     }
