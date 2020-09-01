@@ -33,9 +33,10 @@ struct ContentView: View {
                     }
                     ToolbarItem(placement: .bottomBar) {
                         Picker(selection: $canvas.drawMode, label: Text("")) {
+                            Image(systemName: "circle").tag(DrawMode.pointer)
                             Image(systemName: "pencil").tag(DrawMode.marker)
-                            Image(systemName: "pencil.and.outline").tag(DrawMode.hiliter)
-                            Image(systemName: "star").tag(DrawMode.emitter)
+                            Image(systemName: "paintbrush").tag(DrawMode.hiliter)
+                            Image(systemName: "wand.and.stars").tag(DrawMode.emitter)
                             Image(systemName: "magnifyingglass").tag(DrawMode.zoomer)
                          }.pickerStyle(SegmentedPickerStyle())
                     }
