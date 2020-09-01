@@ -35,7 +35,9 @@ struct ElementView: View {
 struct ImageElements {
     var elements = [ImageElement]()
     mutating func append(_ location:CGPoint) {
-        let element = ImageElement(location: location);
+        let x = location.x + CGFloat.random(in:-20...20.0)
+        let y = location.y + CGFloat.random(in:-20...20.0)
+        let element = ImageElement(location: CGPoint(x: x, y: y));
         elements.append(element)
     }
     
