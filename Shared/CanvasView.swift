@@ -47,6 +47,9 @@ struct CanvasView: View {
             ZStack {
                 #if os(iOS)
                 MyPDFView(self.canvas.url)
+                #else
+                Image("tesla.png")
+                    .resizable()
                 #endif
                 Path {
                     for stroke in self.canvas.strokes {
