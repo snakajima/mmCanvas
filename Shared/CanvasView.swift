@@ -97,9 +97,12 @@ struct CanvasView: View {
                             .position(CGPoint(x:x,y:y))
                     } else if self.canvas.drawMode == .pointer {
                         Image(systemName:"circle.fill")
+                            .resizable()
                             .renderingMode(.template)
                             .foregroundColor(.blue)
-                            .opacity(0.5)
+                            .opacity(0.333)
+                            .scaledToFit()
+                            .frame(width:50, height:50)
                             .position(location)
                     }
                 }
