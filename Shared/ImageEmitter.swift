@@ -19,8 +19,10 @@ struct ElementView: View {
     @State var offset = CGSize.zero
     var body: some View {
         Image(systemName: "star")
+            .renderingMode(.template)
+            .foregroundColor(.blue)
             .onAppear {
-                withAnimation(Animation.easeInOut(duration: 1.0)) {
+                withAnimation(Animation.easeInOut(duration: 1.5)) {
                     self.opacity = 0.0
                     self.offset = CGSize(width: 0.0, height:-20.0)
                 }
