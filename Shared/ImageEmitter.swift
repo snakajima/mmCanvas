@@ -31,7 +31,7 @@ struct ElementView: View {
             .opacity(opacity)
             .offset(offset)
         #else
-        Text("S")
+        Text("⭐︎")
             .foregroundColor(.blue)
             .onAppear {
                 withAnimation(Animation.easeInOut(duration: 1.5)) {

@@ -100,16 +100,12 @@ struct CanvasView: View {
                             .position(CGPoint(x:x,y:y))
                         #endif
                     } else if self.canvas.drawMode == .pointer {
-                        #if os(iOS)
-                        Image(systemName:"circle.fill")
-                            .resizable()
-                            .renderingMode(.template)
+                        Circle()
                             .foregroundColor(.blue)
                             .opacity(0.333)
                             .scaledToFit()
                             .frame(width:50, height:50)
                             .position(location)
-                        #endif
                     }
                 }
             }

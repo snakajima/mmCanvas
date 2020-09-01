@@ -40,13 +40,13 @@ struct ContentView: View {
                     Text("Point").tag(DrawMode.pointer)
                     Text("Pen").tag(DrawMode.marker)
                     Text("Brush").tag(DrawMode.hiliter)
-                    Text("Spr").tag(DrawMode.emitter)
+                    Text("Magic").tag(DrawMode.emitter)
                     Text("Zoom").tag(DrawMode.zoomer)
                     #endif
                  }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding(.horizontal, 10)
-                .frame(width: 200)
+                .frame(width: 280)
             }
         }
     }
