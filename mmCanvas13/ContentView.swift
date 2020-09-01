@@ -26,10 +26,11 @@ struct ContentView: View {
                 .disabled(self.canvas.strokes.count==0)
                 Spacer()
                 Picker(selection: $canvas.drawMode, label: Text("")) {
+                    Image(systemName: "circlebadge.fill").tag(DrawMode.pointer)
                     Image(systemName: "pencil").tag(DrawMode.marker)
-                    Image(systemName: "pencil.and.outline").tag(DrawMode.hiliter)
-                    Image(systemName: "star" ).tag(DrawMode.emitter)
-                    Image(systemName: "circle" ).tag(DrawMode.zoomer)
+                    Image(systemName: "paintbrush").tag(DrawMode.hiliter)
+                    Image(systemName: "wand.and.stars" ).tag(DrawMode.emitter)
+                    Image(systemName: "magnifyingglass" ).tag(DrawMode.zoomer)
                     //Image(systemName: "star").tag(DrawMode.emitter)
                  }
                 .pickerStyle(SegmentedPickerStyle())

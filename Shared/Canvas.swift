@@ -8,14 +8,15 @@
 import SwiftUI
 
 enum DrawMode :Int {
-    case marker = 0
-    case hiliter = 1
-    case emitter = 2
-    case zoomer = 3
+    case pointer = 0
+    case marker = 1
+    case hiliter = 2
+    case emitter = 3
+    case zoomer = 4
 }
 
 struct Canvas {
     var strokes = [Stroke]()
-    var drawMode = DrawMode.marker
+    var drawMode = DrawMode.pointer
     var url:URL? = nil
 }

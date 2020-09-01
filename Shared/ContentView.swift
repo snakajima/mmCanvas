@@ -36,7 +36,7 @@ struct ContentView: View {
                             Image(systemName: "pencil").tag(DrawMode.marker)
                             Image(systemName: "pencil.and.outline").tag(DrawMode.hiliter)
                             Image(systemName: "star").tag(DrawMode.emitter)
-                            Image(systemName: "circle").tag(DrawMode.zoomer)
+                            Image(systemName: "magnifyingglass").tag(DrawMode.zoomer)
                          }.pickerStyle(SegmentedPickerStyle())
                     }
                 }
