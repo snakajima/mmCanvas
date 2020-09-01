@@ -21,17 +21,28 @@ struct ContentView: View {
                 .disabled(self.canvas.strokes.count==0)
                 .padding(.horizontal, 10)
                 Button(action: { self.canvas.strokes.removeAll() }) {
+                    #if os(iOS)
                     Image(systemName: "trash")
+                    #else
+                    Text("Clear")
+                    #endif
                 }
                 .disabled(self.canvas.strokes.count==0)
                 Spacer()
                 Picker(selection: $canvas.drawMode, label: Text("")) {
+                    #if os(iOS)
                     Image(systemName: "circle.fill").tag(DrawMode.pointer)
                     Image(systemName: "pencil").tag(DrawMode.marker)
                     Image(systemName: "paintbrush").tag(DrawMode.hiliter)
                     Image(systemName: "wand.and.stars" ).tag(DrawMode.emitter)
                     Image(systemName: "magnifyingglass" ).tag(DrawMode.zoomer)
-                    //Image(systemName: "star").tag(DrawMode.emitter)
+                    #else
+                    Text("Point").tag(DrawMode.pointer)
+                    Text("Pen").tag(DrawMode.marker)
+                    Text("Brush").tag(DrawMode.hiliter)
+                    Text("Spr").tag(DrawMode.emitter)
+                    Text("Zoom").tag(DrawMode.zoomer)
+                    #endif
                  }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding(.horizontal, 10)

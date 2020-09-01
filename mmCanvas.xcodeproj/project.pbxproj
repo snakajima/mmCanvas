@@ -19,6 +19,16 @@
 		7433B58324F92E2900041FA5 /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433B58124F92E2900041FA5 /* Stroke.swift */; };
 		7433B58524F94AA100041FA5 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433B58424F94AA000041FA5 /* Canvas.swift */; };
 		7433B58624F94AA100041FA5 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433B58424F94AA000041FA5 /* Canvas.swift */; };
+		74573E7E24FEB4520090A24E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74573E7D24FEB4520090A24E /* AppDelegate.swift */; };
+		74573E8224FEB4530090A24E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74573E8124FEB4530090A24E /* Assets.xcassets */; };
+		74573E8524FEB4530090A24E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74573E8424FEB4530090A24E /* Preview Assets.xcassets */; };
+		74573E8824FEB4530090A24E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74573E8624FEB4530090A24E /* Main.storyboard */; };
+		74573E8E24FEB4640090A24E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F502124FCAD650054FC83 /* ContentView.swift */; };
+		74573E8F24FEB46F0090A24E /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433B58424F94AA000041FA5 /* Canvas.swift */; };
+		74573E9124FEB46F0090A24E /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433B58124F92E2900041FA5 /* Stroke.swift */; };
+		74573E9324FEB46F0090A24E /* ImageEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7491E7F024FD8D7C00387B15 /* ImageEmitter.swift */; };
+		74573E9524FEB46F0090A24E /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433B57E24F92A4300041FA5 /* CanvasView.swift */; };
+		74573E9624FEB8810090A24E /* teslaQ2_2020.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 747F503524FCB6AB0054FC83 /* teslaQ2_2020.pdf */; };
 		747F501E24FCAD650054FC83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F501D24FCAD650054FC83 /* AppDelegate.swift */; };
 		747F502024FCAD650054FC83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F501F24FCAD650054FC83 /* SceneDelegate.swift */; };
 		747F502424FCAD670054FC83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 747F502324FCAD670054FC83 /* Assets.xcassets */; };
@@ -51,6 +61,14 @@
 		7433B57E24F92A4300041FA5 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		7433B58124F92E2900041FA5 /* Stroke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stroke.swift; sourceTree = "<group>"; };
 		7433B58424F94AA000041FA5 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		74573E7B24FEB4520090A24E /* mmCanvasCatalina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mmCanvasCatalina.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		74573E7D24FEB4520090A24E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		74573E7F24FEB4520090A24E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		74573E8124FEB4530090A24E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		74573E8424FEB4530090A24E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		74573E8724FEB4530090A24E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		74573E8924FEB4530090A24E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74573E8A24FEB4530090A24E /* mmCanvasCatalina.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mmCanvasCatalina.entitlements; sourceTree = "<group>"; };
 		747F501B24FCAD650054FC83 /* mmCanvas13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mmCanvas13.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		747F501D24FCAD650054FC83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		747F501F24FCAD650054FC83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +97,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		74573E7824FEB4520090A24E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		747F501824FCAD650054FC83 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -96,6 +121,7 @@
 				7433B56624F8AE6200041FA5 /* iOS */,
 				7433B56D24F8AE6300041FA5 /* macOS */,
 				747F501C24FCAD650054FC83 /* mmCanvas13 */,
+				74573E7C24FEB4520090A24E /* mmCanvasCatalina */,
 				7433B56524F8AE6200041FA5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -122,6 +148,7 @@
 				7433B56424F8AE6200041FA5 /* mmCanvas.app */,
 				7433B56C24F8AE6300041FA5 /* mmCanvas.app */,
 				747F501B24FCAD650054FC83 /* mmCanvas13.app */,
+				74573E7B24FEB4520090A24E /* mmCanvasCatalina.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,6 +168,28 @@
 				7433B56F24F8AE6300041FA5 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		74573E7C24FEB4520090A24E /* mmCanvasCatalina */ = {
+			isa = PBXGroup;
+			children = (
+				74573E7D24FEB4520090A24E /* AppDelegate.swift */,
+				74573E7F24FEB4520090A24E /* ContentView.swift */,
+				74573E8124FEB4530090A24E /* Assets.xcassets */,
+				74573E8624FEB4530090A24E /* Main.storyboard */,
+				74573E8924FEB4530090A24E /* Info.plist */,
+				74573E8A24FEB4530090A24E /* mmCanvasCatalina.entitlements */,
+				74573E8324FEB4530090A24E /* Preview Content */,
+			);
+			path = mmCanvasCatalina;
+			sourceTree = "<group>";
+		};
+		74573E8324FEB4530090A24E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				74573E8424FEB4530090A24E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		747F501C24FCAD650054FC83 /* mmCanvas13 */ = {
@@ -202,6 +251,23 @@
 			productReference = 7433B56C24F8AE6300041FA5 /* mmCanvas.app */;
 			productType = "com.apple.product-type.application";
 		};
+		74573E7A24FEB4520090A24E /* mmCanvasCatalina */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74573E8D24FEB4530090A24E /* Build configuration list for PBXNativeTarget "mmCanvasCatalina" */;
+			buildPhases = (
+				74573E7724FEB4520090A24E /* Sources */,
+				74573E7824FEB4520090A24E /* Frameworks */,
+				74573E7924FEB4520090A24E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mmCanvasCatalina;
+			productName = mmCanvasCatalina;
+			productReference = 74573E7B24FEB4520090A24E /* mmCanvasCatalina.app */;
+			productType = "com.apple.product-type.application";
+		};
 		747F501A24FCAD650054FC83 /* mmCanvas13 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 747F502C24FCAD670054FC83 /* Build configuration list for PBXNativeTarget "mmCanvas13" */;
@@ -234,6 +300,9 @@
 					7433B56B24F8AE6300041FA5 = {
 						CreatedOnToolsVersion = 12.0;
 					};
+					74573E7A24FEB4520090A24E = {
+						CreatedOnToolsVersion = 12.0;
+					};
 					747F501A24FCAD650054FC83 = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -255,6 +324,7 @@
 				7433B56324F8AE6200041FA5 /* mmCanvas (iOS) */,
 				7433B56B24F8AE6300041FA5 /* mmCanvas (macOS) */,
 				747F501A24FCAD650054FC83 /* mmCanvas13 */,
+				74573E7A24FEB4520090A24E /* mmCanvasCatalina */,
 			);
 		};
 /* End PBXProject section */
@@ -275,6 +345,17 @@
 			files = (
 				7433B57524F8AE6300041FA5 /* Assets.xcassets in Resources */,
 				747F503724FCB6AB0054FC83 /* teslaQ2_2020.pdf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74573E7924FEB4520090A24E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74573E8824FEB4530090A24E /* Main.storyboard in Resources */,
+				74573E8524FEB4530090A24E /* Preview Assets.xcassets in Resources */,
+				74573E8224FEB4530090A24E /* Assets.xcassets in Resources */,
+				74573E9624FEB8810090A24E /* teslaQ2_2020.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +401,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		74573E7724FEB4520090A24E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74573E8E24FEB4640090A24E /* ContentView.swift in Sources */,
+				74573E7E24FEB4520090A24E /* AppDelegate.swift in Sources */,
+				74573E9324FEB46F0090A24E /* ImageEmitter.swift in Sources */,
+				74573E9124FEB46F0090A24E /* Stroke.swift in Sources */,
+				74573E8F24FEB46F0090A24E /* Canvas.swift in Sources */,
+				74573E9524FEB46F0090A24E /* CanvasView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		747F501724FCAD650054FC83 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -338,6 +432,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		74573E8624FEB4530090A24E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74573E8724FEB4530090A24E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		747F502824FCAD670054FC83 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -553,6 +655,56 @@
 			};
 			name = Release;
 		};
+		74573E8B24FEB4530090A24E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = mmCanvasCatalina/mmCanvasCatalina.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"mmCanvasCatalina/Preview Content\"";
+				DEVELOPMENT_TEAM = H34BY2CCCD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = mmCanvasCatalina/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = org.singularitysociety.mmCanvasCatalina;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		74573E8C24FEB4530090A24E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = mmCanvasCatalina/mmCanvasCatalina.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"mmCanvasCatalina/Preview Content\"";
+				DEVELOPMENT_TEAM = H34BY2CCCD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = mmCanvasCatalina/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = org.singularitysociety.mmCanvasCatalina;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		747F502D24FCAD670054FC83 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -626,6 +778,15 @@
 			buildConfigurations = (
 				7433B57C24F8AE6300041FA5 /* Debug */,
 				7433B57D24F8AE6300041FA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74573E8D24FEB4530090A24E /* Build configuration list for PBXNativeTarget "mmCanvasCatalina" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74573E8B24FEB4530090A24E /* Debug */,
+				74573E8C24FEB4530090A24E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

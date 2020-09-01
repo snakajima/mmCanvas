@@ -45,7 +45,9 @@ struct CanvasView: View {
             })
         GeometryReader { geometry in
             ZStack {
+                #if os(iOS)
                 MyPDFView(self.canvas.url)
+                #endif
                 Path {
                     for stroke in self.canvas.strokes {
                         stroke.append(to: &$0)
@@ -90,12 +92,15 @@ struct CanvasView: View {
                                     (location.x + width * 0.75) / 2.0)
                         let y = min(max(location.y, (location.y + height * 0.25) / 2.0),
                                     (location.y + height * 0.75) / 2.0)
+                        #if os(iOS)
                         MyPDFView(canvas.url)
                             .scaleEffect(5.0, anchor: UnitPoint(x:anchorX, y:anchorY))
                             .frame(width:radius,height:radius)
                             .clipShape(Circle())
                             .position(CGPoint(x:x,y:y))
+                        #endif
                     } else if self.canvas.drawMode == .pointer {
+                        #if os(iOS)
                         Image(systemName:"circle.fill")
                             .resizable()
                             .renderingMode(.template)
@@ -104,6 +109,7 @@ struct CanvasView: View {
                             .scaledToFit()
                             .frame(width:50, height:50)
                             .position(location)
+                        #endif
                     }
                 }
             }

@@ -18,6 +18,7 @@ struct ElementView: View {
     @State var opacity = 1.0
     @State var offset = CGSize.zero
     var body: some View {
+        #if os(iOS)
         Image(systemName: "star")
             .renderingMode(.template)
             .foregroundColor(.blue)
@@ -29,6 +30,18 @@ struct ElementView: View {
             }
             .opacity(opacity)
             .offset(offset)
+        #else
+        Text("S")
+            .foregroundColor(.blue)
+            .onAppear {
+                withAnimation(Animation.easeInOut(duration: 1.5)) {
+                    self.opacity = 0.0
+                    self.offset = CGSize(width: 0.0, height:-20.0)
+                }
+            }
+            .opacity(opacity)
+            .offset(offset)
+        #endif
     }
 }
 
