@@ -29,6 +29,7 @@
 		74573E9324FEB46F0090A24E /* ImageEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7491E7F024FD8D7C00387B15 /* ImageEmitter.swift */; };
 		74573E9524FEB46F0090A24E /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433B57E24F92A4300041FA5 /* CanvasView.swift */; };
 		74573E9624FEB8810090A24E /* teslaQ2_2020.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 747F503524FCB6AB0054FC83 /* teslaQ2_2020.pdf */; };
+		74573E9A24FEBD9E0090A24E /* tesla.png in Resources */ = {isa = PBXBuildFile; fileRef = 74573E9924FEBD9E0090A24E /* tesla.png */; };
 		747F501E24FCAD650054FC83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F501D24FCAD650054FC83 /* AppDelegate.swift */; };
 		747F502024FCAD650054FC83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F501F24FCAD650054FC83 /* SceneDelegate.swift */; };
 		747F502424FCAD670054FC83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 747F502324FCAD670054FC83 /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		74573E8724FEB4530090A24E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74573E8924FEB4530090A24E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74573E8A24FEB4530090A24E /* mmCanvasCatalina.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mmCanvasCatalina.entitlements; sourceTree = "<group>"; };
+		74573E9924FEBD9E0090A24E /* tesla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tesla.png; path = mmCanvasCatalina/tesla.png; sourceTree = SOURCE_ROOT; };
 		747F501B24FCAD650054FC83 /* mmCanvas13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mmCanvas13.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		747F501D24FCAD650054FC83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		747F501F24FCAD650054FC83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 		74573E7C24FEB4520090A24E /* mmCanvasCatalina */ = {
 			isa = PBXGroup;
 			children = (
+				74573E9924FEBD9E0090A24E /* tesla.png */,
 				74573E7D24FEB4520090A24E /* AppDelegate.swift */,
 				74573E7F24FEB4520090A24E /* ContentView.swift */,
 				74573E8124FEB4530090A24E /* Assets.xcassets */,
@@ -354,6 +357,7 @@
 			files = (
 				74573E8824FEB4530090A24E /* Main.storyboard in Resources */,
 				74573E8524FEB4530090A24E /* Preview Assets.xcassets in Resources */,
+				74573E9A24FEBD9E0090A24E /* tesla.png in Resources */,
 				74573E8224FEB4530090A24E /* Assets.xcassets in Resources */,
 				74573E9624FEB8810090A24E /* teslaQ2_2020.pdf in Resources */,
 			);
